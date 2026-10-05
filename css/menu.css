@@ -628,7 +628,7 @@ body.pg-menu {
       rgba(31, 19, 43, 0.48) 68%,
       rgba(31, 19, 43, 0.62) 100%
     ),
-    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2200&q=85");
+    url("../images/food1.webp");
 
   background-size: cover;
   background-position: center;
@@ -983,7 +983,7 @@ body.pg-menu {
   overflow: hidden;
 
   background-image:
-    url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2200&q=85");
+    url("../images/food7.webp");
 
   background-size: cover;
   background-position: center;
@@ -1092,7 +1092,7 @@ body.pg-menu {
   inset: 0;
 
   background-image:
-    url("https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=2200&q=85");
+    url("../images/food31.webp");
 
   background-size: cover;
   background-position: center;
@@ -1307,7 +1307,7 @@ body.pg-menu {
   color: #fff;
 
   background-image:
-    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=2200&q=85");
+    url("../images/food30.webp");
 
   background-size: cover;
   background-position: center;

@@ -1,5 +1,5 @@
 /* =========================================================
-   Stackly — PREMIUM LOGIN PAGE
+   STACKLY / FOODRUSH LOGIN PAGE
    ========================================================= */
 
 .pg-login {
@@ -8,17 +8,14 @@
   --gold: #ffc857;
   --cream: #fff8ef;
   --dark: #211525;
-  --dark-2: #2d1d32;
-  --muted: #806f7b;
-  --line: #eadfe5;
+  --dark-2: #2d1b32;
+  --muted: #766771;
+  --line: #eadfd7;
   --white: #ffffff;
 
-  margin: 0;
   min-height: 100vh;
-  background: #160f1b;
+  background: var(--cream);
   color: var(--dark);
-  font-family: "Nunito", sans-serif;
-  overflow-x: hidden;
 }
 
 
@@ -29,62 +26,62 @@
 .pg-login .lw {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(500px, 0.95fr);
+  grid-template-columns: 46% 54%;
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   LEFT ART PANEL
+   LEFT ART SECTION
    ========================================================= */
 
 .pg-login .art {
   position: relative;
   min-height: 100vh;
-  padding: 42px clamp(35px, 5vw, 90px);
+  padding: 42px 55px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   overflow: hidden;
-  color: #fff;
 
   background:
     linear-gradient(
       135deg,
-      rgba(24, 13, 29, 0.97) 0%,
-      rgba(38, 20, 42, 0.90) 45%,
-      rgba(54, 25, 39, 0.72) 100%
+      rgba(33, 21, 37, 0.95),
+      rgba(45, 27, 50, 0.88)
     ),
-    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=90");
-
-  background-size: cover;
-  background-position: center;
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
 }
 
-/* Ambient glow */
+
+/* Decorative glow */
 
 .pg-login .art::before {
   content: "";
   position: absolute;
-  width: 520px;
-  height: 520px;
-  top: -220px;
-  left: -220px;
+  width: 430px;
+  height: 430px;
   border-radius: 50%;
-  background: rgba(255, 107, 44, 0.16);
-  filter: blur(30px);
+  background: rgba(255, 107, 44, 0.18);
+  filter: blur(70px);
+  top: -130px;
+  left: -140px;
   pointer-events: none;
 }
 
 .pg-login .art::after {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
-  right: -280px;
-  bottom: -260px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  background: rgba(255, 200, 87, 0.10);
-  filter: blur(20px);
+  background: rgba(255, 200, 87, 0.12);
+  filter: blur(75px);
+  right: -130px;
+  bottom: -120px;
   pointer-events: none;
 }
 
@@ -95,53 +92,15 @@
 
 .pg-login .art .logo {
   position: absolute;
-  top: 36px;
-  left: clamp(35px, 5vw, 90px);
+  top: 34px;
+  left: 55px;
   z-index: 5;
-
-  color: #fff;
-  text-decoration: none;
-
-  font-family: "Baloo 2", sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
 }
 
-.pg-login .art .logo span {
-  color: var(--orange);
-}
-
-
-/* =========================================================
-   LEFT CONTENT
-   ========================================================= */
-
-.pg-login .art > h1,
-.pg-login .art > p,
-.pg-login .art > .chips {
-  position: relative;
-  z-index: 3;
-}
-
-.pg-login .art h1 {
-  max-width: 570px;
-  margin: 35px 0 18px;
-
-  font-family: "Baloo 2", sans-serif;
-  font-size: clamp(3rem, 5vw, 5.2rem);
-  line-height: 0.98;
-  font-weight: 800;
-  letter-spacing: -2px;
-}
-
-.pg-login .art p {
-  max-width: 540px;
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1.08rem;
-  line-height: 1.8;
+.pg-login .art .logo img {
+  width: 180px;
+  height: auto;
+  display: block;
 }
 
 
@@ -151,32 +110,12 @@
 
 .pg-login .pic {
   position: relative;
-  width: min(100%, 540px);
-  height: 250px;
-  margin-top: 30px;
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: min(100%, 470px);
+  height: 310px;
+  margin-bottom: 32px;
   border-radius: 34px;
-  overflow: hidden;
-
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.38),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-}
-
-.pg-login .pic::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 25%,
-      rgba(18, 9, 22, 0.65) 100%
-    );
-
-  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
 }
 
 .pg-login .pic img {
@@ -184,12 +123,13 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 34px;
 
-  transition: transform 0.8s ease;
-}
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
-.pg-login .pic:hover img {
-  transform: scale(1.06);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35),
+    0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 
@@ -199,46 +139,42 @@
 
 .pg-login .fl {
   position: absolute;
-  z-index: 5;
-
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
 
   display: grid;
   place-items: center;
 
+  background: rgba(255, 255, 255, 0.96);
+  border: 4px solid rgba(255, 255, 255, 0.35);
   border-radius: 18px;
 
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  font-size: 28px;
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.25);
 
-  font-size: 1.55rem;
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  animation: loginFloat 4s ease-in-out infinite;
 }
 
 .pg-login .f1 {
-  top: 22px;
-  right: 28px;
-  animation: foodFloat 4s ease-in-out infinite;
+  left: -28px;
+  top: 30px;
 }
 
 .pg-login .f2 {
-  left: 24px;
-  bottom: 22px;
-  animation: foodFloat 5s ease-in-out infinite 0.7s;
+  right: -28px;
+  top: 105px;
+  animation-delay: 0.8s;
 }
 
 .pg-login .f3 {
-  right: 90px;
-  bottom: 18px;
-  animation: foodFloat 4.5s ease-in-out infinite 1.2s;
+  right: 30px;
+  bottom: -27px;
+  animation-delay: 1.5s;
 }
 
-@keyframes foodFloat {
+@keyframes loginFloat {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
@@ -251,64 +187,96 @@
 
 
 /* =========================================================
-   TRUST CHIPS
+   LEFT TEXT
+   ========================================================= */
+
+.pg-login .art h1 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+  margin: 0 0 12px;
+
+  color: #ffffff;
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+}
+
+.pg-login .art > p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 560px;
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CHIPS
    ========================================================= */
 
 .pg-login .chips {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 
-  margin-top: 28px;
+  margin-top: 25px;
 }
 
 .pg-login .chips span {
   padding: 10px 15px;
 
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 999px;
 
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
 
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
-}
-
-.pg-login .chips span:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.14);
 }
 
 
 /* =========================================================
-   RIGHT FORM PANEL
+   RIGHT FORM SECTION
    ========================================================= */
 
 .pg-login .fm {
   position: relative;
+
   min-height: 100vh;
+  padding: 50px 7vw;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 70px clamp(30px, 6vw, 100px);
-
   background:
     radial-gradient(
       circle at 90% 10%,
-      rgba(255, 107, 44, 0.09),
+      rgba(255, 107, 44, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(255, 200, 87, 0.12),
       transparent 30%
     ),
-    #fffaf6;
+    var(--cream);
 }
 
 
@@ -319,40 +287,37 @@
 .pg-login .x {
   position: absolute;
   top: 28px;
-  right: 32px;
+  right: 35px;
 
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
 
   display: grid;
   place-items: center;
 
-  color: #594952;
-  background: #fff;
+  color: var(--dark);
+  background: rgba(255, 255, 255, 0.85);
 
-  border: 1px solid #eadfe5;
+  border: 1px solid var(--line);
   border-radius: 50%;
 
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 800;
 
-  box-shadow: 0 8px 25px rgba(39, 20, 35, 0.08);
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(33, 21, 37, 0.08);
 
   transition:
-    color 0.25s ease,
-    background 0.25s ease,
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .pg-login .x:hover {
-  color: #fff;
+  color: #ffffff;
   background: var(--orange);
-  border-color: var(--orange);
-
   transform: rotate(90deg);
-  box-shadow: 0 12px 30px rgba(255, 107, 44, 0.25);
 }
 
 
@@ -361,28 +326,32 @@
    ========================================================= */
 
 .pg-login .box {
-  width: min(100%, 500px);
-  position: relative;
+  width: min(100%, 520px);
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .pg-login .box h2 {
-  margin: 0;
+  margin: 0 0 7px;
 
   color: var(--dark);
 
-  font-family: "Baloo 2", sans-serif;
-  font-size: clamp(2.25rem, 4vw, 3.2rem);
-  line-height: 1.05;
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 800;
-  letter-spacing: -1px;
+  line-height: 1.05;
 }
 
 .pg-login .st {
-  margin: 12px 0 28px;
+  margin: 0 0 24px;
 
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
+
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 
@@ -396,58 +365,77 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  padding: 5px;
-  margin-bottom: 28px;
+  width: 100%;
+  min-height: 58px;
 
-  background: #f2e9e4;
-  border-radius: 15px;
+  margin-bottom: 24px;
+  padding: 4px;
 
-  isolation: isolate;
+  background: #eee5df;
+  border: 1px solid #e2d6cf;
+  border-radius: 17px;
+
+  overflow: hidden;
 }
+
+
+/* BLACK SLIDER */
 
 .pg-login .roles .slide {
   position: absolute;
-  z-index: -1;
 
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
 
-  width: calc(50% - 5px);
-  height: calc(100% - 10px);
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
 
-  background: var(--dark);
-  border-radius: 11px;
+  background: #211525;
 
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 13px;
+
+  z-index: 0;
+
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .pg-login .roles button {
+  position: relative;
+  z-index: 1;
+
   min-height: 48px;
 
   border: 0;
+  outline: 0;
   background: transparent;
 
-  color: #695a63;
+  color: #6e626b;
 
-  border-radius: 11px;
+  border-radius: 13px;
 
   font-family: "Nunito", sans-serif;
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 800;
 
   cursor: pointer;
 
   transition:
     color 0.3s ease,
-    transform 0.25s ease;
-}
-
-.pg-login .roles button.on {
-  color: #fff;
+    transform 0.2s ease;
 }
 
 .pg-login .roles button:hover {
-  transform: translateY(-1px);
+  color: var(--dark);
+}
+
+.pg-login .roles button.on {
+  color: #ffffff;
+}
+
+.pg-login .roles button:active {
+  transform: scale(0.97);
 }
 
 
@@ -457,67 +445,61 @@
 
 .pg-login #f {
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
-.pg-login #f > label {
+.pg-login #f > label:not(.ck) {
   display: grid;
   gap: 8px;
 
-  color: #332631;
-
-  font-size: 0.92rem;
-  font-weight: 800;
-}
-
-.pg-login #f input {
-  width: 100%;
-  box-sizing: border-box;
-
-  height: 54px;
-  padding: 0 17px;
-
   color: var(--dark);
-  background: #fff;
 
-  border: 1.5px solid var(--line);
-  border-radius: 13px;
-
-  outline: none;
-
-  font-family: "Nunito", sans-serif;
-  font-size: 0.98rem;
-
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.pg-login #f input::placeholder {
-  color: #a99ba3;
-}
-
-.pg-login #f input:hover {
-  border-color: #d8cbd2;
-}
-
-.pg-login #f input:focus {
-  background: #fff;
-  border-color: var(--orange);
-
-  box-shadow:
-    0 0 0 4px rgba(255, 107, 44, 0.10),
-    0 8px 25px rgba(255, 107, 44, 0.06);
+  font-size: 14px;
+  font-weight: 800;
 }
 
 
 /* =========================================================
-   HIDDEN RESTAURANT ID
+   INPUTS
    ========================================================= */
 
-.pg-login #rid.hide {
-  display: none;
+.pg-login #f input[type="email"],
+.pg-login #f input[type="password"],
+.pg-login #f input[type="text"] {
+  width: 100%;
+  min-height: 54px;
+
+  padding: 0 17px;
+
+  color: var(--dark);
+  background: #ffffff;
+
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  outline: none;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+
+  box-shadow: 0 5px 18px rgba(33, 21, 37, 0.035);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.pg-login #f input::placeholder {
+  color: #aaa0a6;
+}
+
+.pg-login #f input:focus {
+  border-color: var(--orange);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 107, 44, 0.10),
+    0 8px 25px rgba(33, 21, 37, 0.06);
 }
 
 
@@ -531,44 +513,71 @@
 }
 
 .pg-login .pw input {
-  padding-right: 55px !important;
+  padding-right: 52px !important;
 }
 
 .pg-login #eye {
   position: absolute;
 
-  top: 50%;
+  top: 10%;
   right: 7px;
 
   width: 42px;
   height: 42px;
 
-  transform: translateY(-50%);
-
   display: grid;
   place-items: center;
+
+  transform: translateY(-50%);
+
+  color: #796c75;
+  background: transparent;
 
   border: 0;
   border-radius: 10px;
 
-  background: transparent;
-
   cursor: pointer;
-  font-size: 1rem;
+
+  font-size: 17px;
 
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .pg-login #eye:hover {
-  background: #f8eee9;
-  transform: translateY(-50%) scale(1.04);
+  color: var(--orange);
+  background: #fff2eb;
 }
 
 
 /* =========================================================
-   REMEMBER / FORGOT
+   RESTAURANT ID
+   ========================================================= */
+
+.pg-login #rid.hide {
+  display: none;
+}
+
+.pg-login #rid:not(.hide) {
+  animation: loginReveal 0.25s ease;
+}
+
+@keyframes loginReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   REMEMBER + FORGOT
    ========================================================= */
 
 .pg-login .row {
@@ -577,35 +586,37 @@
   justify-content: space-between;
   gap: 15px;
 
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
-.pg-login .row .ck {
-  display: flex !important;
-  grid-template-columns: none !important;
+.pg-login .ck {
+  display: inline-flex !important;
   align-items: center;
   gap: 8px;
 
-  color: #766771 !important;
+  color: var(--muted);
 
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
 }
 
-.pg-login .row .ck input {
-  width: 17px !important;
-  height: 17px !important;
+.pg-login .ck input {
+  width: 16px;
+  height: 16px;
+
   margin: 0;
 
   accent-color: var(--orange);
 
-  box-shadow: none !important;
+  cursor: pointer;
 }
 
 .pg-login .row > a {
   color: var(--orange);
 
-  font-size: 0.85rem;
+  font-size: 13px;
   font-weight: 800;
 
   text-decoration: none;
@@ -624,113 +635,168 @@
    ========================================================= */
 
 .pg-login .go {
+  position: relative;
+
   width: 100%;
   min-height: 56px;
 
   margin-top: 4px;
 
-  border: 0;
-  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 
-  color: #fff;
+  color: #ffffff;
 
   background:
     linear-gradient(
       135deg,
       var(--orange),
-      #ff4e19
+      var(--orange-dark)
     );
 
-  box-shadow:
-    0 14px 30px rgba(255, 107, 44, 0.24);
+  border: 0;
+  border-radius: 15px;
 
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
+  font-family: "Baloo 2", cursive;
+  font-size: 17px;
   font-weight: 800;
 
   cursor: pointer;
 
+  box-shadow:
+    0 14px 30px rgba(255, 107, 44, 0.25);
+
+  overflow: hidden;
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    filter 0.25s ease;
+    opacity 0.25s ease;
 }
 
 .pg-login .go:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 18px 38px rgba(255, 107, 44, 0.32);
-
-  filter: brightness(1.04);
+    0 18px 35px rgba(255, 107, 44, 0.32);
 }
 
 .pg-login .go:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
+}
+
+.pg-login .go:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  transform: none;
 }
 
 
 /* =========================================================
-   SUCCESS / STATUS MESSAGE
+   LOADING STATE
    ========================================================= */
 
-.pg-login .ok {
-  min-height: 20px;
-  margin: -4px 0 0;
+.pg-login .go.loading {
+  pointer-events: none;
+}
 
-  color: #16845c;
+.pg-login .go.loading span {
+  position: relative;
+  padding-right: 26px;
+}
 
-  font-size: 0.88rem;
-  font-weight: 800;
+.pg-login .go.loading span::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  width: 15px;
+  height: 15px;
+
+  margin-top: -8px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: loginSpin 0.7s linear infinite;
+}
+
+@keyframes loginSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
 /* =========================================================
-   BOTTOM LINKS
+   SUCCESS / ERROR MESSAGE
+   ========================================================= */
+
+.pg-login #ok {
+  display: none;
+
+  margin: 0;
+
+  padding: 11px 13px;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.pg-login #ok.show {
+  display: block;
+}
+
+.pg-login #ok.success {
+  color: #167447;
+  background: #eaf8f0;
+  border: 1px solid #bce8cf;
+}
+
+.pg-login #ok.error {
+  color: #b42318;
+  background: #fff0ee;
+  border: 1px solid #f4c2bc;
+}
+
+
+/* =========================================================
+   BOTTOM ALTERNATIVE LINK
    ========================================================= */
 
 .pg-login .alt {
-  margin: 28px 0 0;
+  margin: 24px 0 0;
 
-  color: #887780;
+  color: var(--muted);
 
   text-align: center;
-  font-size: 0.88rem;
+
+  font-size: 14px;
   line-height: 1.7;
 }
 
 .pg-login .alt a {
-  color: var(--dark);
+  color: var(--orange);
 
   font-weight: 800;
+
   text-decoration: none;
 
   transition: color 0.2s ease;
 }
 
 .pg-login .alt a:hover {
-  color: var(--orange);
-}
-
-
-/* =========================================================
-   SUBTLE FORM ANIMATION
-   ========================================================= */
-
-.pg-login .box {
-  animation: loginBoxIn 0.7s ease both;
-}
-
-@keyframes loginBoxIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: var(--orange-dark);
+  text-decoration: underline;
 }
 
 
@@ -739,26 +805,29 @@
    ========================================================= */
 
 @media (max-width: 1050px) {
+
   .pg-login .lw {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 42% 58%;
   }
 
   .pg-login .art {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 40px 35px;
   }
 
-  .pg-login .art h1 {
-    font-size: 3.6rem;
+  .pg-login .art .logo {
+    left: 35px;
   }
 
   .pg-login .pic {
-    height: 210px;
+    height: 260px;
+  }
+
+  .pg-login .art h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
   }
 
   .pg-login .fm {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding: 45px 45px;
   }
 }
 
@@ -768,100 +837,107 @@
    ========================================================= */
 
 @media (max-width: 760px) {
-  .pg-login {
-    background: #fffaf6;
-  }
 
   .pg-login .lw {
-    display: block;
     min-height: 100vh;
+    display: block;
   }
 
-  /* Compact top visual */
+  /* Left section becomes compact top banner */
 
   .pg-login .art {
     min-height: auto;
 
-    padding:
-      95px
-      24px
-      34px;
+    padding: 95px 25px 35px;
 
-    background:
-      linear-gradient(
-        135deg,
-        rgba(24, 13, 29, 0.95),
-        rgba(54, 25, 39, 0.82)
-      ),
-      url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=85");
-
-    background-size: cover;
-    background-position: center;
+    border-radius: 0 0 32px 32px;
   }
 
   .pg-login .art .logo {
-    top: 27px;
-    left: 24px;
+    top: 25px;
+    left: 25px;
+  }
 
-    font-size: 1.7rem;
+  .pg-login .art .logo img {
+    width: 145px;
   }
 
   .pg-login .pic {
-    display: none;
+    width: min(100%, 430px);
+    height: 210px;
+    margin-bottom: 25px;
+  }
+
+  .pg-login .pic img {
+    border-radius: 25px;
+  }
+
+  .pg-login .fl {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+    font-size: 23px;
+  }
+
+  .pg-login .f1 {
+    left: -12px;
+    top: 20px;
+  }
+
+  .pg-login .f2 {
+    right: -12px;
+    top: 80px;
+  }
+
+  .pg-login .f3 {
+    right: 20px;
+    bottom: -20px;
   }
 
   .pg-login .art h1 {
-    max-width: 550px;
-
-    margin: 0 0 12px;
-
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    letter-spacing: -1px;
+    font-size: clamp(2.1rem, 8vw, 3rem);
+    letter-spacing: -0.8px;
   }
 
-  .pg-login .art p {
-    font-size: 0.95rem;
-    line-height: 1.65;
+  .pg-login .art > p {
+    font-size: 14px;
   }
 
   .pg-login .chips {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   .pg-login .chips span {
     padding: 8px 12px;
-    font-size: 0.76rem;
-  }
-
-  .pg-login .fl {
-    display: none;
+    font-size: 12px;
   }
 
   /* Form */
 
   .pg-login .fm {
     min-height: auto;
-
-    padding:
-      45px
-      24px
-      55px;
+    padding: 50px 22px 45px;
   }
 
   .pg-login .x {
     top: 20px;
     right: 20px;
 
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .pg-login .box {
+    width: 100%;
   }
 
   .pg-login .box h2 {
-    font-size: 2.35rem;
+    font-size: 2.25rem;
   }
 
   .pg-login .st {
-    font-size: 0.94rem;
+    font-size: 14px;
   }
 }
 
@@ -871,19 +947,32 @@
    ========================================================= */
 
 @media (max-width: 480px) {
+
   .pg-login .art {
-    padding:
-      88px
-      20px
-      28px;
+    padding: 88px 18px 30px;
   }
 
   .pg-login .art .logo {
-    left: 20px;
+    left: 18px;
+    top: 22px;
+  }
+
+  .pg-login .art .logo img {
+    width: 130px;
+  }
+
+  .pg-login .pic {
+    height: 175px;
+    margin-bottom: 22px;
   }
 
   .pg-login .art h1 {
-    font-size: 2.65rem;
+    font-size: 2rem;
+  }
+
+  .pg-login .art > p {
+    font-size: 13px;
+    line-height: 1.55;
   }
 
   .pg-login .chips {
@@ -891,87 +980,193 @@
   }
 
   .pg-login .chips span {
-    font-size: 0.72rem;
+    font-size: 11px;
+    padding: 7px 10px;
   }
 
   .pg-login .fm {
-    padding:
-      40px
-      20px
-      45px;
+    padding: 45px 18px 35px;
   }
 
   .pg-login .box h2 {
-    font-size: 2.15rem;
+    font-size: 2rem;
   }
 
   .pg-login .roles {
-    grid-template-columns: 1fr;
-    gap: 3px;
-  }
-
-  .pg-login .roles .slide {
-    width: calc(100% - 10px);
-    height: calc(50% - 5px);
+    min-height: 54px;
   }
 
   .pg-login .roles button {
-    min-height: 45px;
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  .pg-login #f input[type="email"],
+  .pg-login #f input[type="password"],
+  .pg-login #f input[type="text"] {
+    min-height: 52px;
+    font-size: 14px;
   }
 
   .pg-login .row {
     align-items: flex-start;
-    flex-direction: column;
-    gap: 9px;
   }
 
   .pg-login .go {
     min-height: 54px;
   }
+
+  .pg-login .alt {
+    font-size: 13px;
+  }
 }
 
 
 /* =========================================================
-   VERY SMALL DEVICES
+   EXTRA SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 360px) {
-  .pg-login .art h1 {
-    font-size: 2.35rem;
+
+  .pg-login .art {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  .pg-login .box h2 {
-    font-size: 1.95rem;
+  .pg-login .art h1 {
+    font-size: 1.8rem;
   }
 
   .pg-login .fm {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .pg-login .roles button {
+    font-size: 11px;
+  }
+
+  .pg-login .row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pg-login .row > a {
+    align-self: flex-end;
   }
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   LOGIN - OVERRIDE COMMON .box STYLES
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
-  .pg-login *,
-  .pg-login *::before,
-  .pg-login *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
+.pg-login .box {
+
+  width: min(100%, 680px) !important;
+
+  max-width: 680px !important;
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+
+  background: transparent !important;
+
+  border: 0 !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+
+  rotate: none !important;
+
 }
 
-.pg-login #eye i {
-  font-size: 1rem;
-  color: #766771;
+
+/* Remove common decorative box effects */
+
+.pg-login .box::before,
+.pg-login .box::after {
+
+  display: none !important;
+
+  content: none !important;
+
+}
+
+
+/* Keep login form elements clean */
+
+.pg-login .roles,
+.pg-login #f input,
+.pg-login #eye,
+.pg-login .go,
+.pg-login .x {
+
+  transform: none;
+
+}
+
+
+/* Allow only the intended hover effects */
+
+.pg-login .go:hover {
+
+  transform: translateY(-2px);
+
+}
+
+.pg-login .x:hover {
+
+  transform: rotate(90deg);
+
+}
+
+.pg-login .roles button:hover {
+
+  transform: none;
+
+}
+
+
+/* Prevent common button pseudo effects from affecting login */
+
+.pg-login .go::before,
+.pg-login .go::after {
+
   pointer-events: none;
+
 }
 
-.pg-login #eye:hover i {
-  color: var(--orange);
+
+/* Keep the form area clean */
+
+.pg-login .fm {
+
+  overflow: hidden;
+
+}
+
+
+/* =========================================================
+   FINAL LOGIN BOX SIZE
+   ========================================================= */
+
+.pg-login .box h2 {
+
+  transform: none !important;
+
+  rotate: none !important;
+
+}
+
+.pg-login #f {
+
+  transform: none !important;
+
+  rotate: none !important;
+
 }

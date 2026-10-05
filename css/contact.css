@@ -106,7 +106,7 @@ body.pg-contact {
       rgba(25, 15, 34, 0.68) 65%,
       rgba(25, 15, 34, 0.82) 100%
     ),
-    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2200&q=85");
+    url("../images/contact1.webp");
 
   background-size: cover;
   background-position: center;
@@ -1097,7 +1097,7 @@ body.pg-contact {
   padding: 80px 20px;
 
   background:
-    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=85")
+    url("../images/food9.webp")
     center / cover no-repeat;
 
   overflow: hidden;
