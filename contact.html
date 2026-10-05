@@ -9,13 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/contact.css" />
   </head>
   <body class="pg-contact">
     <header class="hd">
       <a class="logo" href="index.html">
-        <img src="images/logo.png" alt="Stackly">
+        <img src="images/logo.webp" alt="Stackly">
       </a>
       <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
       <nav class="nav">
@@ -218,7 +219,6 @@
               <input
                 type="email"
                 placeholder="you@example.com"
-                oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                 required
               />
             </div>
@@ -479,15 +479,201 @@
 </section>
 
     </main>
-    <footer class="ft">
-      <b>🍔 Stackly</b>
-      <p>Fresh food, fast. © 2026 Stackly. All rights reserved.</p>
-      <p>
-        <a href="index.html">Home</a> · <a href="menu.html">Menu</a> ·
-        <a href="offers.html">Offers</a> · <a href="about.html">About</a> ·
-        <a href="contact.html">Contact</a>
-      </p>
-    </footer>
+
+<footer class="ftr">
+
+  <!-- Decorative Food Elements -->
+  <div class="food-decor">
+    <span>🍕</span>
+    <span>🍔</span>
+    <span>🍟</span>
+  </div>
+
+  <div class="wrap">
+
+    <div class="f-grid">
+
+      <!-- BRAND COLUMN -->
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand">
+          <img src="images/logo.webp" alt="FoodRush">
+        </a>
+
+        <p>
+          Fast, fresh and flavour-packed food delivered
+          straight to your door. Discover your favourites
+          and make every meal a little more exciting.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="soc">
+
+          <a href="error.html" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="error.html" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="error.html" aria-label="Google Play">
+            <i class="fa-brands fa-google-play"></i>
+          </a>
+
+          <a href="error.html" aria-label="App Store">
+            <i class="fa-brands fa-app-store-ios"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- EXPLORE -->
+      <div>
+
+        <h4>Explore</h4>
+
+        <ul>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="menu.html">Menu</a>
+          </li>
+
+          <li>
+            <a href="offers.html">Offers</a>
+          </li>
+
+          <li>
+            <a href="about.html">About Us</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- FOOD & SERVICES -->
+      <div>
+
+        <h4>Food & Services</h4>
+
+        <ul>
+
+          <li>
+            <a href="menu.html">Pizza</a>
+          </li>
+
+          <li>
+            <a href="menu.html">Burgers</a>
+          </li>
+
+          <li>
+            <a href="menu.html">Healthy Meals</a>
+          </li>
+
+          <li>
+            <a href="menu.html">Desserts</a>
+          </li>
+
+          <li>
+            <a href="offers.html">Special Offers</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- CONTACT -->
+      <div>
+
+        <h4>Get in Touch</h4>
+
+        <p>
+          FoodRush Central,
+          <br>
+          24 Food Street,
+          <br>
+          Bengaluru, India
+        </p>
+
+        <p style="margin-top:.5rem">
+          hello@foodrush.in
+        </p>
+
+
+        <!-- NEWSLETTER -->
+        <div class="footer-subscribe">
+
+          <h4>
+            Stay Hungry, Stay Updated
+          </h4>
+
+          <form class="subscribe-form">
+
+            <div class="subscribe-input">
+
+              <i class="fa-regular fa-envelope"></i>
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+              >
+
+            </div>
+
+            <button
+              type="submit"
+              class="subscribe-btn"
+            >
+              Subscribe
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </form>
+
+          <span class="subscribe-message"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+    <div class="f-bot">
+
+      <span>
+        &copy; 2026 FoodRush.
+        All rights reserved.
+      </span>
+
+      <span>
+        Privacy &middot;
+        Terms &middot;
+        Cookie Policy
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================================================================== -->
+
     <div class="modal" id="lm">
       <div class="box">
         <button class="x" aria-label="Close">✕</button>

@@ -677,3 +677,8 @@ body.pg-about {
     width: 100%;
   }
 }
+
+.s4 img {
+  object-fit: cover;
+  object-position: top;
+}

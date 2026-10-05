@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   /* =========================================
      ELEMENTS
   ========================================= */
@@ -10,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     : null;
 
   const passwordInput = document.getElementById("pw");
-
   const passwordToggle = document.getElementById("eye");
 
   const rememberMe = document.querySelector(
@@ -18,15 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const roleButtons = document.querySelectorAll(".roles button");
+  const roleSlider = document.querySelector(".roles .slide");
 
   const titleText = document.getElementById("t");
-
   const subtitleText = document.getElementById("st");
-
   const roleName = document.getElementById("rn");
 
   const formMessage = document.getElementById("ok");
-
   const submitButton = document.querySelector(".go");
 
   const restaurantId = document.getElementById("rid");
@@ -39,11 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   if (passwordToggle && passwordInput) {
+
     passwordToggle.innerHTML =
       '<i class="fa-regular fa-eye"></i>';
 
     passwordToggle.addEventListener("click", () => {
+
       if (passwordInput.type === "password") {
+
         passwordInput.type = "text";
 
         passwordToggle.innerHTML =
@@ -53,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "aria-label",
           "Hide password"
         );
+
       } else {
+
         passwordInput.type = "password";
 
         passwordToggle.innerHTML =
@@ -73,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   function validateEmail(value) {
+
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
   }
 
 
@@ -82,10 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   function validatePassword(value) {
+
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#()_\-+=])[A-Za-z\d@$!%*?&^#()_\-+=]{8,}$/;
 
     return passwordRegex.test(value);
+
   }
 
 
@@ -94,11 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   function showError(message) {
+
     if (!formMessage) return;
 
     formMessage.textContent = message;
     formMessage.style.color = "var(--orange)";
     formMessage.classList.add("show");
+
   }
 
 
@@ -107,11 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   function showSuccess(message) {
+
     if (!formMessage) return;
 
     formMessage.textContent = message;
     formMessage.style.color = "#16845c";
     formMessage.classList.add("show");
+
   }
 
 
@@ -120,10 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   function hideMessage() {
+
     if (!formMessage) return;
 
     formMessage.textContent = "";
     formMessage.classList.remove("show");
+
   }
 
 
@@ -132,13 +145,39 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   [emailInput, passwordInput].forEach((input) => {
+
     if (!input) return;
 
     input.addEventListener("input", () => {
+
       input.style.borderColor = "";
+
       hideMessage();
+
     });
+
   });
+
+
+  /* =========================================
+     ROLE SLIDER
+  ========================================= */
+
+  function updateRoleSlider(activeButton) {
+
+    if (!roleSlider || !activeButton) return;
+
+    if (activeButton === roleButtons[0]) {
+
+      roleSlider.style.transform = "translateX(0)";
+
+    } else {
+
+      roleSlider.style.transform = "translateX(100%)";
+
+    }
+
+  }
 
 
   /* =========================================
@@ -146,52 +185,71 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   roleButtons.forEach((button) => {
+
     button.addEventListener("click", () => {
 
+      /* Remove active state */
       roleButtons.forEach((item) => {
+
         item.classList.remove("on");
+
       });
 
+
+      /* Add active state */
       button.classList.add("on");
+
+
+      /* Move black indicator */
+      updateRoleSlider(button);
+
 
       const selectedRole = button.dataset.r;
 
-      /* Update button text */
 
+      /* Update role name */
       if (roleName) {
+
         roleName.textContent = selectedRole;
+
       }
 
-      /* Update title */
 
+      /* Update heading */
       if (titleText) {
+
         titleText.textContent =
-          button.dataset.t || "Welcome back, foodie!";
+          button.dataset.t ||
+          "Welcome back, foodie!";
+
       }
+
 
       /* Update subtitle */
-
       if (subtitleText) {
+
         subtitleText.textContent =
           button.dataset.s ||
           "Login as a customer to order your favourites.";
+
       }
 
 
-      /* =====================================
-         RESTAURANT ID
-      ===================================== */
-
+      /* Restaurant Owner fields */
       if (restaurantId) {
+
         const restaurantInput =
           restaurantId.querySelector("input");
+
 
         if (selectedRole === "Restaurant Owner") {
 
           restaurantId.classList.remove("hide");
 
           if (restaurantInput) {
+
             restaurantInput.required = true;
+
           }
 
         } else {
@@ -199,14 +257,21 @@ document.addEventListener("DOMContentLoaded", () => {
           restaurantId.classList.add("hide");
 
           if (restaurantInput) {
+
             restaurantInput.required = false;
             restaurantInput.value = "";
+
           }
+
         }
+
       }
 
+
       hideMessage();
+
     });
+
   });
 
 
@@ -215,30 +280,35 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   loginForm.addEventListener("submit", (e) => {
+
     e.preventDefault();
 
     hideMessage();
 
     let valid = true;
 
+
     const emailValue = emailInput
       ? emailInput.value.trim()
       : "";
+
 
     const passwordValue = passwordInput
       ? passwordInput.value
       : "";
 
 
-    /* =====================================
-       EMAIL
-    ===================================== */
+    /* =========================================
+       EMAIL CHECK
+    ========================================= */
 
     if (!validateEmail(emailValue)) {
 
       if (emailInput) {
+
         emailInput.style.borderColor =
           "var(--orange)";
+
       }
 
       showError(
@@ -246,18 +316,21 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       valid = false;
+
     }
 
 
-    /* =====================================
-       EMPTY PASSWORD
-    ===================================== */
+    /* =========================================
+       PASSWORD EMPTY CHECK
+    ========================================= */
 
     if (passwordValue === "") {
 
       if (passwordInput) {
+
         passwordInput.style.borderColor =
           "var(--orange)";
+
       }
 
       showError(
@@ -265,18 +338,21 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       return;
+
     }
 
 
-    /* =====================================
-       PASSWORD FORMAT
-    ===================================== */
+    /* =========================================
+       PASSWORD FORMAT CHECK
+    ========================================= */
 
     if (!validatePassword(passwordValue)) {
 
       if (passwordInput) {
+
         passwordInput.style.borderColor =
           "var(--orange)";
+
       }
 
       showError(
@@ -284,32 +360,65 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       return;
+
     }
 
 
     if (!valid) return;
 
 
-    /* =====================================
-       GET SELECTED ROLE
-    ===================================== */
+    /* =========================================
+       GET ACTIVE ROLE
+    ========================================= */
 
-    const activeRole = document.querySelector(
-      ".roles button.on"
-    );
+    const activeRole =
+      document.querySelector(".roles button.on");
+
 
     const selectedRole = activeRole
       ? activeRole.dataset.r
       : "Customer";
 
 
-    /* =====================================
-       BUTTON LOADING
-    ===================================== */
+    /* =========================================
+       RESTAURANT ID CHECK
+    ========================================= */
+
+    if (selectedRole === "Restaurant Owner") {
+
+      const restaurantInput =
+        restaurantId
+          ? restaurantId.querySelector("input")
+          : null;
+
+
+      if (
+        restaurantInput &&
+        restaurantInput.value.trim() === ""
+      ) {
+
+        restaurantInput.style.borderColor =
+          "var(--orange)";
+
+        showError(
+          "Please enter your Restaurant ID."
+        );
+
+        return;
+
+      }
+
+    }
+
+
+    /* =========================================
+       LOGIN LOADING
+    ========================================= */
 
     const originalHTML = submitButton
       ? submitButton.innerHTML
       : "";
+
 
     if (submitButton) {
 
@@ -321,65 +430,62 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       submitButton.disabled = true;
+
     }
 
 
-    /* =====================================
+    /* =========================================
        LOGIN PROCESS
-    ===================================== */
+    ========================================= */
 
     setTimeout(() => {
 
       const currentUser = {
+
         name: emailValue.split("@")[0],
+
         email: emailValue,
+
         role: selectedRole
+
       };
 
 
-      /* =================================
-         SAVE USER
-      ================================= */
-
+      /* Save login session */
       sessionStorage.setItem(
         "currentUser",
         JSON.stringify(currentUser)
       );
 
 
-      /* =================================
-         SUCCESS
-      ================================= */
-
+      /* Success message */
       showSuccess(
         `Welcome back! Signed in as ${selectedRole}.`
       );
 
 
-      /* =================================
-         CLEAR LOGIN DATA
-      ================================= */
-
+      /* Reset form */
       loginForm.reset();
 
+
       if (emailInput) {
+
         emailInput.value = "";
+
       }
 
+
       if (passwordInput) {
+
         passwordInput.value = "";
-      }
-
-
-      /* =================================
-         RESET PASSWORD ICON
-      ================================= */
-
-      if (passwordInput) {
         passwordInput.type = "password";
+
       }
 
+
+      /* Reset password icon */
       if (passwordToggle) {
+
         passwordToggle.innerHTML =
           '<i class="fa-regular fa-eye"></i>';
 
@@ -387,13 +493,11 @@ document.addEventListener("DOMContentLoaded", () => {
           "aria-label",
           "Show password"
         );
+
       }
 
 
-      /* =================================
-         RESET RESTAURANT ID
-      ================================= */
-
+      /* Reset Restaurant ID */
       if (restaurantId) {
 
         restaurantId.classList.add("hide");
@@ -401,30 +505,75 @@ document.addEventListener("DOMContentLoaded", () => {
         const restaurantInput =
           restaurantId.querySelector("input");
 
+
         if (restaurantInput) {
+
           restaurantInput.required = false;
           restaurantInput.value = "";
+
         }
+
       }
 
 
-      /* =================================
-         RESET BUTTON
-      ================================= */
+      /* Reset role selector */
+      roleButtons.forEach((button, index) => {
 
+        button.classList.toggle(
+          "on",
+          index === 0
+        );
+
+      });
+
+
+      if (roleSlider) {
+
+        roleSlider.style.transform =
+          "translateX(0)";
+
+      }
+
+
+      if (roleName) {
+
+        roleName.textContent = "Customer";
+
+      }
+
+
+      if (titleText) {
+
+        titleText.textContent =
+          "Welcome back, foodie!";
+
+      }
+
+
+      if (subtitleText) {
+
+        subtitleText.textContent =
+          "Login as a customer to order your favourites.";
+
+      }
+
+
+      /* Restore login button */
       if (submitButton) {
 
         submitButton.classList.remove("loading");
 
-        submitButton.innerHTML = originalHTML;
+        submitButton.innerHTML =
+          originalHTML;
 
         submitButton.disabled = false;
+
       }
 
 
-      /* =================================
+      /* =========================================
          REDIRECT
-      ================================= */
+      ========================================= */
 
       setTimeout(() => {
 
@@ -440,44 +589,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
           window.location.href =
             "customer-dashboard.html";
+
         }
 
       }, 1000);
 
     }, 1200);
+
   });
 
 
   /* =========================================
-     CLEAR EVERYTHING WHEN LOGIN PAGE OPENS
+     RESET LOGIN PAGE
   ========================================= */
 
   window.addEventListener("pageshow", () => {
 
     loginForm.reset();
 
+
     if (emailInput) {
+
       emailInput.value = "";
+
     }
 
+
     if (passwordInput) {
+
       passwordInput.value = "";
-      passwordInput.type = "password";
+
+      passwordInput.type =
+        "password";
+
     }
+
 
     hideMessage();
 
 
-    /* Reset remember me */
-
     if (rememberMe) {
+
       rememberMe.checked = false;
+
     }
 
 
     /* Reset password icon */
-
     if (passwordToggle) {
+
       passwordToggle.innerHTML =
         '<i class="fa-regular fa-eye"></i>';
 
@@ -485,44 +645,58 @@ document.addEventListener("DOMContentLoaded", () => {
         "aria-label",
         "Show password"
       );
+
     }
 
 
-    /* Reset role */
-
+    /* Reset role buttons */
     roleButtons.forEach((button, index) => {
+
       button.classList.toggle(
         "on",
         index === 0
       );
+
     });
 
 
-    /* Reset title */
+    /* Reset black role indicator */
+    if (roleSlider) {
 
+      roleSlider.style.transform =
+        "translateX(0)";
+
+    }
+
+
+    /* Reset heading */
     if (titleText) {
+
       titleText.textContent =
         "Welcome back, foodie!";
+
     }
 
 
     /* Reset subtitle */
-
     if (subtitleText) {
+
       subtitleText.textContent =
         "Login as a customer to order your favourites.";
+
     }
 
 
     /* Reset role name */
-
     if (roleName) {
-      roleName.textContent = "Customer";
+
+      roleName.textContent =
+        "Customer";
+
     }
 
 
-    /* Hide restaurant ID */
-
+    /* Reset restaurant ID */
     if (restaurantId) {
 
       restaurantId.classList.add("hide");
@@ -530,14 +704,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const restaurantInput =
         restaurantId.querySelector("input");
 
+
       if (restaurantInput) {
+
         restaurantInput.required = false;
+
         restaurantInput.value = "";
+
       }
+
     }
+
   });
 
 });
-
-
-
