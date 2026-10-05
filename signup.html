@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Stackly | Create Account</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+
+  <body class="pg-signup">
+
+    <main class="sw">
+
+      <!-- ===============================
+           LEFT ART
+      ================================ -->
+
+      <aside class="art">
+
+        <a class="logo" href="index.html">
+          <img src="images/logo.png" alt="Stackly">
+        </a>
+
+        <div class="pic">
+
+          <img
+            src="images/food21.webp"
+            alt="Fresh Food"
+          />
+
+          <span class="fl f1">🍕</span>
+          <span class="fl f2">🥗</span>
+          <span class="fl f3">🍔</span>
+
+        </div>
+
+        <h1>Good food starts here.</h1>
+
+        <p>
+          Create your Stackly account to order favourites,
+          save addresses and enjoy exclusive member deals.
+        </p>
+
+        <div class="chips">
+          <span>🎁 Welcome offers</span>
+          <span>🛵 Fast delivery</span>
+          <span>⭐ Member rewards</span>
+        </div>
+
+      </aside>
+
+
+      <!-- ===============================
+           SIGNUP FORM
+      ================================ -->
+
+      <section class="sm">
+
+        <a
+          class="x"
+          id="signupClose"
+          href="index.html"
+          aria-label="Close signup"
+          title="Close"
+        >
+          ✕
+        </a>
+
+        <div class="box">
+
+          <h2>Create your account</h2>
+
+          <p class="st">
+            Join Stackly and make every meal more rewarding.
+          </p>
+
+
+          <!-- =========================
+               SOCIAL BUTTONS
+          ========================== -->
+
+          <div class="social-row">
+
+            <button
+              type="button"
+              class="social-btn"
+              aria-label="Continue with Google"
+            >
+              <i class="fa-brands fa-google"></i>
+              <span>Google</span>
+            </button>
+
+            <button
+              type="button"
+              class="social-btn"
+              aria-label="Continue with Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook</span>
+            </button>
+
+          </div>
+
+
+          <div class="divider">
+            <span>or continue with email</span>
+          </div>
+
+
+          <!-- =========================
+               SIGNUP FORM
+          ========================== -->
+
+          <form id="signupForm">
+
+            <label>
+              Full Name
+
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
+                required
+              />
+            </label>
+
+
+            <label>
+              Email Address
+
+              <input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+
+            <label>
+              Password
+
+              <span class="pw">
+
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Create a strong password"
+                  autocomplete="new-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  id="togglePassword"
+                  aria-label="Show password"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+
+              </span>
+            </label>
+
+
+            <label>
+              Confirm Password
+
+              <span class="pw">
+
+                <input
+                  id="confirmPassword"
+                  type="password"
+                  placeholder="Confirm your password"
+                  autocomplete="new-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  id="toggleConfirmPassword"
+                  aria-label="Show password"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+
+              </span>
+            </label>
+
+
+            <label class="check-row">
+
+              <input type="checkbox" />
+
+              <span>
+                I agree to the
+                <a href="contact.html">Terms</a>
+                &
+                <a href="contact.html">Privacy Policy</a>.
+              </span>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="btn submit-btn"
+            >
+              <span>Create Account</span>
+            </button>
+
+
+            <p id="signupMessage"></p>
+
+          </form>
+
+
+          <!-- =========================
+               LOGIN LINK
+          ========================== -->
+
+          <p class="alt">
+            Already have an account?
+            <a href="login.html">Login here</a>
+            ·
+            <a href="index.html">Back to home</a>
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <script src="js/signup.js"></script>
+
+  </body>
+</html>

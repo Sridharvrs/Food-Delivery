@@ -1,0 +1,977 @@
+/* =========================================================
+   FOODRUSH — PREMIUM LOGIN PAGE
+   ========================================================= */
+
+.pg-login {
+  --orange: #ff6b2c;
+  --orange-dark: #e94d12;
+  --gold: #ffc857;
+  --cream: #fff8ef;
+  --dark: #211525;
+  --dark-2: #2d1d32;
+  --muted: #806f7b;
+  --line: #eadfe5;
+  --white: #ffffff;
+
+  margin: 0;
+  min-height: 100vh;
+  background: #160f1b;
+  color: var(--dark);
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.pg-login .lw {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(500px, 0.95fr);
+}
+
+
+/* =========================================================
+   LEFT ART PANEL
+   ========================================================= */
+
+.pg-login .art {
+  position: relative;
+  min-height: 100vh;
+  padding: 42px clamp(35px, 5vw, 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(24, 13, 29, 0.97) 0%,
+      rgba(38, 20, 42, 0.90) 45%,
+      rgba(54, 25, 39, 0.72) 100%
+    ),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* Ambient glow */
+
+.pg-login .art::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -220px;
+  left: -220px;
+  border-radius: 50%;
+  background: rgba(255, 107, 44, 0.16);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.pg-login .art::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -280px;
+  bottom: -260px;
+  border-radius: 50%;
+  background: rgba(255, 200, 87, 0.10);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.pg-login .art .logo {
+  position: absolute;
+  top: 36px;
+  left: clamp(35px, 5vw, 90px);
+  z-index: 5;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.pg-login .art .logo span {
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.pg-login .art > h1,
+.pg-login .art > p,
+.pg-login .art > .chips {
+  position: relative;
+  z-index: 3;
+}
+
+.pg-login .art h1 {
+  max-width: 570px;
+  margin: 35px 0 18px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.pg-login .art p {
+  max-width: 540px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOD IMAGE
+   ========================================================= */
+
+.pg-login .pic {
+  position: relative;
+  width: min(100%, 540px);
+  height: 250px;
+  margin-top: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 34px;
+  overflow: hidden;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.pg-login .pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 25%,
+      rgba(18, 9, 22, 0.65) 100%
+    );
+
+  pointer-events: none;
+}
+
+.pg-login .pic img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.pg-login .pic:hover img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   FLOATING FOOD ICONS
+   ========================================================= */
+
+.pg-login .fl {
+  position: absolute;
+  z-index: 5;
+
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-size: 1.55rem;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.pg-login .f1 {
+  top: 22px;
+  right: 28px;
+  animation: foodFloat 4s ease-in-out infinite;
+}
+
+.pg-login .f2 {
+  left: 24px;
+  bottom: 22px;
+  animation: foodFloat 5s ease-in-out infinite 0.7s;
+}
+
+.pg-login .f3 {
+  right: 90px;
+  bottom: 18px;
+  animation: foodFloat 4.5s ease-in-out infinite 1.2s;
+}
+
+@keyframes foodFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+
+/* =========================================================
+   TRUST CHIPS
+   ========================================================= */
+
+.pg-login .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.pg-login .chips span {
+  padding: 10px 15px;
+
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.09);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 100px;
+
+  font-size: 0.84rem;
+  font-weight: 700;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.pg-login .chips span:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
+   RIGHT FORM PANEL
+   ========================================================= */
+
+.pg-login .fm {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px clamp(30px, 6vw, 100px);
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 107, 44, 0.09),
+      transparent 30%
+    ),
+    #fffaf6;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.pg-login .x {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  color: #594952;
+  background: #fff;
+
+  border: 1px solid #eadfe5;
+  border-radius: 50%;
+
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  box-shadow: 0 8px 25px rgba(39, 20, 35, 0.08);
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pg-login .x:hover {
+  color: #fff;
+  background: var(--orange);
+  border-color: var(--orange);
+
+  transform: rotate(90deg);
+  box-shadow: 0 12px 30px rgba(255, 107, 44, 0.25);
+}
+
+
+/* =========================================================
+   FORM BOX
+   ========================================================= */
+
+.pg-login .box {
+  width: min(100%, 500px);
+  position: relative;
+}
+
+.pg-login .box h2 {
+  margin: 0;
+
+  color: var(--dark);
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2.25rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.pg-login .st {
+  margin: 12px 0 28px;
+
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ROLE SWITCHER
+   ========================================================= */
+
+.pg-login .roles {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  padding: 5px;
+  margin-bottom: 28px;
+
+  background: #f2e9e4;
+  border-radius: 15px;
+
+  isolation: isolate;
+}
+
+.pg-login .roles .slide {
+  position: absolute;
+  z-index: -1;
+
+  top: 5px;
+  left: 5px;
+
+  width: calc(50% - 5px);
+  height: calc(100% - 10px);
+
+  background: var(--dark);
+  border-radius: 11px;
+
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pg-login .roles button {
+  min-height: 48px;
+
+  border: 0;
+  background: transparent;
+
+  color: #695a63;
+
+  border-radius: 11px;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+.pg-login .roles button.on {
+  color: #fff;
+}
+
+.pg-login .roles button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.pg-login #f {
+  display: grid;
+  gap: 18px;
+}
+
+.pg-login #f > label {
+  display: grid;
+  gap: 8px;
+
+  color: #332631;
+
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.pg-login #f input {
+  width: 100%;
+  box-sizing: border-box;
+
+  height: 54px;
+  padding: 0 17px;
+
+  color: var(--dark);
+  background: #fff;
+
+  border: 1.5px solid var(--line);
+  border-radius: 13px;
+
+  outline: none;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 0.98rem;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.pg-login #f input::placeholder {
+  color: #a99ba3;
+}
+
+.pg-login #f input:hover {
+  border-color: #d8cbd2;
+}
+
+.pg-login #f input:focus {
+  background: #fff;
+  border-color: var(--orange);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 107, 44, 0.10),
+    0 8px 25px rgba(255, 107, 44, 0.06);
+}
+
+
+/* =========================================================
+   HIDDEN RESTAURANT ID
+   ========================================================= */
+
+.pg-login #rid.hide {
+  display: none;
+}
+
+
+/* =========================================================
+   PASSWORD FIELD
+   ========================================================= */
+
+.pg-login .pw {
+  position: relative;
+  display: block;
+}
+
+.pg-login .pw input {
+  padding-right: 55px !important;
+}
+
+.pg-login #eye {
+  position: absolute;
+
+  top: 50%;
+  right: 7px;
+
+  width: 42px;
+  height: 42px;
+
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: transparent;
+
+  cursor: pointer;
+  font-size: 1rem;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pg-login #eye:hover {
+  background: #f8eee9;
+  transform: translateY(-50%) scale(1.04);
+}
+
+
+/* =========================================================
+   REMEMBER / FORGOT
+   ========================================================= */
+
+.pg-login .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-top: -3px;
+}
+
+.pg-login .row .ck {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center;
+  gap: 8px;
+
+  color: #766771 !important;
+
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+}
+
+.pg-login .row .ck input {
+  width: 17px !important;
+  height: 17px !important;
+  margin: 0;
+
+  accent-color: var(--orange);
+
+  box-shadow: none !important;
+}
+
+.pg-login .row > a {
+  color: var(--orange);
+
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.pg-login .row > a:hover {
+  color: var(--orange-dark);
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.pg-login .go {
+  width: 100%;
+  min-height: 56px;
+
+  margin-top: 4px;
+
+  border: 0;
+  border-radius: 14px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange),
+      #ff4e19
+    );
+
+  box-shadow:
+    0 14px 30px rgba(255, 107, 44, 0.24);
+
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.pg-login .go:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(255, 107, 44, 0.32);
+
+  filter: brightness(1.04);
+}
+
+.pg-login .go:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUCCESS / STATUS MESSAGE
+   ========================================================= */
+
+.pg-login .ok {
+  min-height: 20px;
+  margin: -4px 0 0;
+
+  color: #16845c;
+
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   BOTTOM LINKS
+   ========================================================= */
+
+.pg-login .alt {
+  margin: 28px 0 0;
+
+  color: #887780;
+
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.pg-login .alt a {
+  color: var(--dark);
+
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.pg-login .alt a:hover {
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   SUBTLE FORM ANIMATION
+   ========================================================= */
+
+.pg-login .box {
+  animation: loginBoxIn 0.7s ease both;
+}
+
+@keyframes loginBoxIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .pg-login .lw {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .pg-login .art {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .pg-login .art h1 {
+    font-size: 3.6rem;
+  }
+
+  .pg-login .pic {
+    height: 210px;
+  }
+
+  .pg-login .fm {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .pg-login {
+    background: #fffaf6;
+  }
+
+  .pg-login .lw {
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* Compact top visual */
+
+  .pg-login .art {
+    min-height: auto;
+
+    padding:
+      95px
+      24px
+      34px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(24, 13, 29, 0.95),
+        rgba(54, 25, 39, 0.82)
+      ),
+      url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=85");
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .pg-login .art .logo {
+    top: 27px;
+    left: 24px;
+
+    font-size: 1.7rem;
+  }
+
+  .pg-login .pic {
+    display: none;
+  }
+
+  .pg-login .art h1 {
+    max-width: 550px;
+
+    margin: 0 0 12px;
+
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    letter-spacing: -1px;
+  }
+
+  .pg-login .art p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .pg-login .chips {
+    margin-top: 20px;
+  }
+
+  .pg-login .chips span {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+  }
+
+  .pg-login .fl {
+    display: none;
+  }
+
+  /* Form */
+
+  .pg-login .fm {
+    min-height: auto;
+
+    padding:
+      45px
+      24px
+      55px;
+  }
+
+  .pg-login .x {
+    top: 20px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .pg-login .box h2 {
+    font-size: 2.35rem;
+  }
+
+  .pg-login .st {
+    font-size: 0.94rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .pg-login .art {
+    padding:
+      88px
+      20px
+      28px;
+  }
+
+  .pg-login .art .logo {
+    left: 20px;
+  }
+
+  .pg-login .art h1 {
+    font-size: 2.65rem;
+  }
+
+  .pg-login .chips {
+    gap: 7px;
+  }
+
+  .pg-login .chips span {
+    font-size: 0.72rem;
+  }
+
+  .pg-login .fm {
+    padding:
+      40px
+      20px
+      45px;
+  }
+
+  .pg-login .box h2 {
+    font-size: 2.15rem;
+  }
+
+  .pg-login .roles {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .pg-login .roles .slide {
+    width: calc(100% - 10px);
+    height: calc(50% - 5px);
+  }
+
+  .pg-login .roles button {
+    min-height: 45px;
+  }
+
+  .pg-login .row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .pg-login .go {
+    min-height: 54px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .pg-login .art h1 {
+    font-size: 2.35rem;
+  }
+
+  .pg-login .box h2 {
+    font-size: 1.95rem;
+  }
+
+  .pg-login .fm {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-login *,
+  .pg-login *::before,
+  .pg-login *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.pg-login #eye i {
+  font-size: 1rem;
+  color: #766771;
+  pointer-events: none;
+}
+
+.pg-login #eye:hover i {
+  color: var(--orange);
+}

@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stackly | Customer Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/customer-dashboard.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sb" id="sb">
+        <div class="brand">
+          <a class="logo" href="index.html">
+            <img src="images/logo.png" alt="Stackly">
+          </a>
+        </div>
+        <nav>
+          <button data-m="overview" class="on">
+            <i>🏠</i><span>Overview</span></button
+          ><button data-m="browse"><i>🍽️</i><span>Order Food</span></button
+          ><button data-m="orders"><i>📦</i><span>My Orders</span></button
+          ><button data-m="fav"><i>❤️</i><span>Favorites</span></button
+          ><button data-m="wallet"><i>💳</i><span>Wallet & Offers</span></button
+          ><button data-m="profile">
+            <i>👤</i><span>Profile & Addresses</span>
+          </button>
+        </nav>
+        <div class="me">
+          <span>👩</span>
+          <div><b class="profileName">Ananya R</b><small>Gold member soon</small></div>
+        </div>
+        <button class="lo out">🚪 Logout</button>
+      </aside>
+      <div class="ov" id="ov"></div>
+      <div class="main">
+        <header class="top">
+          <button class="tg" id="tg" aria-label="Toggle menu">☰</button
+          ><b id="ttl">Overview</b>
+          <div class="tr">
+            <span class="pill live">● Live</span
+            ><button class="lo out sm">🚪 Logout</button>
+          </div>
+        </header>
+        <main>
+          <section class="mod on" id="overview">
+            <div class="mh">
+              <h2>Dashboard overview</h2>
+              <p>Everything about your food life in one place.</p>
+            </div>
+            <div class="ban">
+              <div>
+                <h2>Good evening, <span class="profileName">Ananya</span>! 👋</h2>
+                <p>
+                  Your Margherita Feast is on the way. Rider Ravi is 8 minutes
+                  away.
+                </p>
+                <button class="go" data-go="orders">Track order</button>
+                <button class="b2 w" data-go="browse">Order more</button>
+              </div>
+              <span class="e1">🍕</span><span class="e2">🛵</span
+              ><span class="e3">🍔</span>
+            </div>
+            <div class="stats">
+              <div class="st c0">
+                <span class="ic">📦</span><b data-n="24">0</b
+                ><small>Total orders</small>
+              </div>
+              <div class="st c1">
+                <span class="ic">💳</span><b data-n="850">₹0</b
+                ><small>Wallet balance</small>
+              </div>
+              <div class="st c2">
+                <span class="ic">🎖️</span><b data-n="1240">0</b
+                ><small>Reward points</small>
+              </div>
+              <div class="st c3">
+                <span class="ic">💰</span><b data-n="2150">₹0</b
+                ><small>Total saved</small>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🛵 Live order tracker</h3>
+                <p>
+                  <strong>Order #FR-20481</strong> · Margherita Feast + Cola
+                </p>
+                <div class="prog"><i id="pg"></i></div>
+                <p id="eta"><strong>ETA:</strong> 24 minutes</p>
+                <ol class="steps" id="steps">
+                  <li data-s="0">
+                    <b>1</b>
+                    <div>
+                      <strong>Order confirmed</strong
+                      ><small>Spice Garden accepted your order</small>
+                    </div>
+                  </li>
+                  <li data-s="1">
+                    <b>2</b>
+                    <div>
+                      <strong>Preparing</strong
+                      ><small>Chef is cooking your food</small>
+                    </div>
+                  </li>
+                  <li data-s="2">
+                    <b>3</b>
+                    <div>
+                      <strong>Out for delivery</strong
+                      ><small>Rider Ravi picked up your order</small>
+                    </div>
+                  </li>
+                  <li data-s="3">
+                    <b>4</b>
+                    <div>
+                      <strong>Delivered</strong><small>Enjoy your meal!</small>
+                    </div>
+                  </li>
+                </ol>
+                <button class="b2" id="sim">Refresh status</button>
+              </div>
+              <div class="pn">
+                <h3>📊 Spending, last 6 months</h3>
+                <div class="bars">
+                  <div>
+                    <span style="--h: 45%"><em>45</em></span
+                    ><small>Apr</small>
+                  </div>
+                  <div>
+                    <span style="--h: 62%"><em>62</em></span
+                    ><small>May</small>
+                  </div>
+                  <div>
+                    <span style="--h: 38%"><em>38</em></span
+                    ><small>Jun</small>
+                  </div>
+                  <div>
+                    <span style="--h: 80%"><em>80</em></span
+                    ><small>Jul</small>
+                  </div>
+                  <div>
+                    <span style="--h: 55%"><em>55</em></span
+                    ><small>Aug</small>
+                  </div>
+                  <div>
+                    <span style="--h: 70%"><em>70</em></span
+                    ><small>Sep</small>
+                  </div>
+                </div>
+                <p>Average spend: <b>₹1,150</b> per month.</p>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>⭐ Recommended for you</h3>
+              <div class="g3">
+                <div class="mini">
+                  <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=70"
+                    alt="Smash Burger"
+                    loading="lazy"
+                  />
+                  <h4>Smash Burger</h4>
+                  <p>Based on your last order</p>
+                </div>
+                <div class="mini">
+                  <img
+                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=70"
+                    alt="Protein Bowl"
+                    loading="lazy"
+                  />
+                  <h4>Protein Bowl</h4>
+                  <p>Light and healthy pick</p>
+                </div>
+                <div class="mini">
+                  <img
+                    src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&q=70"
+                    alt="Pancake Stack"
+                    loading="lazy"
+                  />
+                  <h4>Pancake Stack</h4>
+                  <p>Popular this morning</p>
+                </div>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>🕘 Recent activity</h3>
+              <ul class="ls">
+                <li>✅ Order #FR-20455 delivered — rated 5 stars</li>
+                <li>🎁 You earned 120 points on your last order</li>
+                <li>💳 ₹500 added to your wallet</li>
+                <li>❤️ You added Pizza Palace to favourites</li>
+              </ul>
+            </div>
+          </section>
+          <section class="mod" id="browse">
+            <div class="mh">
+              <h2>Order food</h2>
+              <p>Search restaurants, add dishes and check out.</p>
+            </div>
+            <div class="split">
+              <div>
+                <input id="q" placeholder="🔍 Search restaurants or cuisines" />
+                <div class="chips" id="cat">
+                  <button class="on" data-f="all">All</button
+                  ><button data-f="pizza">Pizza</button
+                  ><button data-f="burger">Burgers</button
+                  ><button data-f="healthy">Healthy</button
+                  ><button data-f="dessert">Desserts</button>
+                </div>
+                <div class="rg">
+                  <article
+                    class="rc"
+                    data-c="pizza"
+                    data-name="pizza palace italian · pizza"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=70"
+                      alt="Pizza Palace"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Pizza Palace</h4>
+                      <p>Italian · Pizza</p>
+                      <p class="mt">⭐ 4.7 · ⏱ 25 min · ₹300 for two</p>
+                      <button class="go add" data-n="Cheese Burst" data-p="349">
+                        + Cheese Burst ₹349
+                      </button>
+                    </div>
+                  </article>
+                  <article
+                    class="rc"
+                    data-c="burger"
+                    data-name="burger barn american · burgers"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=70"
+                      alt="Burger Barn"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Burger Barn</h4>
+                      <p>American · Burgers</p>
+                      <p class="mt">⭐ 4.5 · ⏱ 20 min · ₹250 for two</p>
+                      <button class="go add" data-n="Double Patty" data-p="229">
+                        + Double Patty ₹229
+                      </button>
+                    </div>
+                  </article>
+                  <article
+                    class="rc"
+                    data-c="healthy"
+                    data-name="green bowl healthy · salads"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=70"
+                      alt="Green Bowl"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Green Bowl</h4>
+                      <p>Healthy · Salads</p>
+                      <p class="mt">⭐ 4.8 · ⏱ 30 min · ₹350 for two</p>
+                      <button class="go add" data-n="Quinoa Bowl" data-p="259">
+                        + Quinoa Bowl ₹259
+                      </button>
+                    </div>
+                  </article>
+                  <article
+                    class="rc"
+                    data-c="dessert"
+                    data-name="sweet stack desserts · breakfast"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=500&q=70"
+                      alt="Sweet Stack"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Sweet Stack</h4>
+                      <p>Desserts · Breakfast</p>
+                      <p class="mt">⭐ 4.6 · ⏱ 18 min · ₹200 for two</p>
+                      <button class="go add" data-n="Pancakes" data-p="179">
+                        + Pancakes ₹179
+                      </button>
+                    </div>
+                  </article>
+                  <article
+                    class="rc"
+                    data-c="burger"
+                    data-name="smoke house bbq · grill"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=70"
+                      alt="Smoke House"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Smoke House</h4>
+                      <p>BBQ · Grill</p>
+                      <p class="mt">⭐ 4.4 · ⏱ 35 min · ₹500 for two</p>
+                      <button class="go add" data-n="BBQ Platter" data-p="449">
+                        + BBQ Platter ₹449
+                      </button>
+                    </div>
+                  </article>
+                  <article
+                    class="rc"
+                    data-c="healthy"
+                    data-name="royal thali indian · meals"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70"
+                      alt="Royal Thali"
+                      loading="lazy"
+                    />
+                    <div class="rb">
+                      <h4>Royal Thali</h4>
+                      <p>Indian · Meals</p>
+                      <p class="mt">⭐ 4.9 · ⏱ 28 min · ₹400 for two</p>
+                      <button class="go add" data-n="Royal Thali" data-p="379">
+                        + Royal Thali ₹379
+                      </button>
+                    </div>
+                  </article>
+                </div>
+                <div class="pn">
+                  <h3>🎁 Offers near you</h3>
+                  <ul class="ls">
+                    <li>FOOD20 — 20% off up to ₹100</li>
+                    <li>FREEDEL — Free delivery above ₹299</li>
+                    <li>PIZZA100 — ₹100 off pizza above ₹399</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pn sticky">
+                <h3>🛒 Your cart</h3>
+                <label class="f"
+                  >Deliver to<select id="addr">
+                    <option>Home, RS Puram</option>
+                    <option>Office, Peelamedu</option>
+                  </select></label
+                >
+                <ul class="ls" id="cl">
+                  <li>Cart is empty. Add a dish!</li>
+                </ul>
+                <div class="row"><span>Subtotal</span><b id="sub">₹0</b></div>
+                <div class="row"><span>Delivery</span><b id="dl">₹0</b></div>
+                <div class="row"><span>Discount</span><b id="di">-₹0</b></div>
+                <div class="row"><strong>Total</strong><b id="tot">₹0</b></div>
+                <input id="cp" placeholder="Coupon code (try FOOD20)" /><button
+                  class="b2"
+                  id="ap"
+                >
+                  Apply coupon
+                </button>
+                <button class="go" id="ck">Checkout</button>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="orders">
+            <div class="mh">
+              <h2>My orders</h2>
+              <p>Track current orders and revisit past ones.</p>
+            </div>
+            <div class="chips" id="ot">
+              <button class="on" data-f="all">All</button
+              ><button data-f="active">Active</button
+              ><button data-f="done">Past</button>
+            </div>
+            <div class="pn">
+              <h3>📋 Order list</h3>
+              <div class="tw">
+                <table id="ot1">
+                  <thead>
+                    <tr>
+                      <th>Order</th>
+                      <th>Items</th>
+                      <th>Total</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#FR-20481</td>
+                      <td>Margherita Feast, Cola</td>
+                      <td>₹348</td>
+                      <td><span class="bd y">On the way</span></td>
+                      <td><button class="b2 re">Reorder</button></td>
+                    </tr>
+                    <tr>
+                      <td>#FR-20455</td>
+                      <td>Royal Thali</td>
+                      <td>₹379</td>
+                      <td><span class="bd g">Delivered</span></td>
+                      <td><button class="b2 re">Reorder</button></td>
+                    </tr>
+                    <tr>
+                      <td>#FR-20410</td>
+                      <td>Double Patty Burger x2</td>
+                      <td>₹458</td>
+                      <td><span class="bd g">Delivered</span></td>
+                      <td><button class="b2 re">Reorder</button></td>
+                    </tr>
+                    <tr>
+                      <td>#FR-20377</td>
+                      <td>Quinoa Bowl</td>
+                      <td>₹259</td>
+                      <td><span class="bd r">Cancelled</span></td>
+                      <td><button class="b2 re">Reorder</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🧾 Bill details (#FR-20481)</h3>
+                <ul class="ls">
+                  <li>Items total: ₹299</li>
+                  <li>Delivery fee: ₹30</li>
+                  <li>Taxes: ₹19</li>
+                  <li>Total paid: ₹348 via UPI</li>
+                </ul>
+              </div>
+              <div class="pn">
+                <h3>⭐ Rate your last order</h3>
+                <p>Royal Thali · #FR-20455</p>
+                <div class="stars" id="st">
+                  <span>★</span><span>★</span><span>★</span><span>★</span
+                  ><span>★</span>
+                </div>
+                <textarea
+                  rows="3"
+                  placeholder="Tell us how it tasted"
+                ></textarea
+                ><button class="go" id="rv">Submit review</button>
+              </div>
+              <div class="pn">
+                <h3>🛵 Delivery partner</h3>
+                <ul class="ls">
+                  <li>Name: Ravi Kumar</li>
+                  <li>Vehicle: Bike TN 66 AB 1024</li>
+                  <li>Rating: ⭐ 4.9</li>
+                  <li>Trips today: 11</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="fav">
+            <div class="mh">
+              <h2>Favorites</h2>
+              <p>Restaurants and dishes you love.</p>
+            </div>
+            <div class="rg">
+              <article class="rc">
+                <img
+                  src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=70"
+                  alt="Pizza Palace"
+                  loading="lazy"
+                />
+                <div class="rb">
+                  <h4>Pizza Palace <button class="heart on">♥</button></h4>
+                  <p>Italian · Pizza</p>
+                  <p class="mt">⭐ 4.7 · 25 min</p>
+                </div>
+              </article>
+              <article class="rc">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70"
+                  alt="Royal Thali"
+                  loading="lazy"
+                />
+                <div class="rb">
+                  <h4>Royal Thali <button class="heart on">♥</button></h4>
+                  <p>Indian · Meals</p>
+                  <p class="mt">⭐ 4.9 · 28 min</p>
+                </div>
+              </article>
+              <article class="rc">
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=70"
+                  alt="Green Bowl"
+                  loading="lazy"
+                />
+                <div class="rb">
+                  <h4>Green Bowl <button class="heart on">♥</button></h4>
+                  <p>Healthy</p>
+                  <p class="mt">⭐ 4.8 · 30 min</p>
+                </div>
+              </article>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🍽️ Favourite dishes</h3>
+                <ul class="ls">
+                  <li>Margherita Feast — ordered 8 times</li>
+                  <li>Royal Thali — ordered 6 times</li>
+                  <li>Quinoa Bowl — ordered 4 times</li>
+                  <li>Pancake Stack — ordered 3 times</li>
+                </ul>
+              </div>
+              <div class="pn">
+                <h3>📁 Collections</h3>
+                <div class="g3">
+                  <div class="mini col">
+                    <h4>Weekend treats</h4>
+                    <p>5 places</p>
+                  </div>
+                  <div class="mini col">
+                    <h4>Office lunch</h4>
+                    <p>4 places</p>
+                  </div>
+                  <div class="mini col">
+                    <h4>Late night</h4>
+                    <p>3 places</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="wallet">
+            <div class="mh">
+              <h2>Wallet & offers</h2>
+              <p>Add money, use coupons, earn rewards.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>💳 Wallet balance</h3>
+                <b class="big bal" id="bal">₹850</b>
+                <p>Add money instantly:</p>
+                <div class="chips" id="am">
+                  <button data-a="100">+₹100</button
+                  ><button data-a="250">+₹250</button
+                  ><button data-a="500">+₹500</button>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>🎖️ Loyalty: Silver → Gold</h3>
+                <p>1,240 / 2,000 points</p>
+                <div class="prog"><i style="width: 62%" id="lp"></i></div>
+                <p>Earn 760 more points to unlock free delivery for a month.</p>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>🎟️ My coupons</h3>
+              <div class="g3">
+                <div class="cpn">
+                  <b>FOOD20</b>
+                  <p>20% off up to ₹100</p>
+                  <button class="b2 cc" data-c="FOOD20">Copy</button>
+                </div>
+                <div class="cpn">
+                  <b>FREEDEL</b>
+                  <p>Free delivery above ₹299</p>
+                  <button class="b2 cc" data-c="FREEDEL">Copy</button>
+                </div>
+                <div class="cpn">
+                  <b>PIZZA100</b>
+                  <p>₹100 off pizzas</p>
+                  <button class="b2 cc" data-c="PIZZA100">Copy</button>
+                </div>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>🧾 Transactions</h3>
+              <div class="tw">
+                <table id="tx">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Details</th>
+                      <th>Amount</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>03 Oct</td>
+                      <td>Order #FR-20481</td>
+                      <td>-₹348</td>
+                      <td><span class="bd r">Debit</span></td>
+                    </tr>
+                    <tr>
+                      <td>01 Oct</td>
+                      <td>Added to wallet</td>
+                      <td>+₹500</td>
+                      <td><span class="bd g">Credit</span></td>
+                    </tr>
+                    <tr>
+                      <td>28 Sep</td>
+                      <td>Cashback</td>
+                      <td>+₹40</td>
+                      <td><span class="bd g">Credit</span></td>
+                    </tr>
+                    <tr>
+                      <td>25 Sep</td>
+                      <td>Order #FR-20410</td>
+                      <td>-₹458</td>
+                      <td><span class="bd r">Debit</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="profile">
+            <div class="mh">
+              <h2>Profile & addresses</h2>
+              <p>Manage your details, addresses and preferences.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>👤 Personal details</h3>
+                <form id="pf">
+                  <div class="fg">
+                    <label class="f">Full name<input value="Ananya R" /></label
+                    ><label class="f"
+                      >Phone<input value="+91 98765 43210"
+                    /></label>
+                  </div>
+                  <label class="f"
+                    >Email<input
+                      type="email"
+                      value="ananya@example.com" /></label
+                  ><button class="go">Save changes</button>
+                </form>
+              </div>
+              <div class="pn">
+                <h3>📍 Saved addresses</h3>
+                <div id="ads">
+                  <div class="ad on">
+                    <b>🏠 Home</b>
+                    <p>12 Race Course Rd, RS Puram</p>
+                  </div>
+                  <div class="ad">
+                    <b>🏢 Office</b>
+                    <p>45 Avinashi Rd, Peelamedu</p>
+                  </div>
+                  <div class="ad">
+                    <b>👪 Parents</b>
+                    <p>8 Gandhipuram, Cross Cut Rd</p>
+                  </div>
+                </div>
+                <p>Tap an address to make it default.</p>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>⚙️ Preferences</h3>
+                <div class="row">
+                  <span>Vegetarian only</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="v" /><i></i
+                  ></label>
+                </div>
+                <div class="row">
+                  <span>Order updates by SMS</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="n" checked /><i></i
+                  ></label>
+                </div>
+                <div class="row">
+                  <span>Offers and news</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="o" checked /><i></i
+                  ></label>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>🔒 Security</h3>
+                <form id="pw">
+                  <label class="f"
+                    >Current password<input type="password" /></label
+                  ><label class="f">New password<input type="password" /></label
+                  ><button class="b1">Update password</button>
+                </form>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>💬 Help & support</h3>
+              <ul class="ls">
+                <li>📞 Call us: +91 98765 43210</li>
+                <li>✉️ help@Stackly.example</li>
+                <li>❓ Order issue? Open the order and tap Report a problem</li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="dlg" id="dlg">
+      <div class="bx">
+        <h3>Logout?</h3>
+        <p>You will return to the login page.</p>
+        <button class="b2" id="no">Stay</button
+        ><button class="b1" id="yes">Logout</button>
+      </div>
+    </div>
+    <div class="toast" id="ts"></div>
+    <script src="js/customer-dashboard.js"></script>
+  </body>
+</html>

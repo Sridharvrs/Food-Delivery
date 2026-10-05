@@ -1,0 +1,955 @@
+/* =========================================================
+   FOODRUSH SIGNUP PAGE
+   ========================================================= */
+
+.pg-signup {
+  --orange: #ff6b2c;
+  --orange-dark: #e94d12;
+  --gold: #ffc857;
+  --cream: #fff8ef;
+  --dark: #211525;
+  --dark-2: #2d1b32;
+  --muted: #766771;
+  --line: #eadfd7;
+  --white: #ffffff;
+
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: "Nunito", sans-serif;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.pg-signup .sw {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 46% 54%;
+}
+
+/* =========================================================
+   LEFT IMAGE / BRAND AREA
+   ========================================================= */
+
+.pg-signup .art {
+  position: relative;
+  min-height: 100vh;
+  padding: 42px 55px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(28, 16, 35, 0.96),
+      rgba(44, 23, 42, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.pg-signup .art::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: -140px;
+  border-radius: 50%;
+  background: rgba(255, 107, 44, 0.16);
+  filter: blur(5px);
+}
+
+.pg-signup .art::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: -160px;
+  bottom: -130px;
+  border-radius: 50%;
+  background: rgba(255, 200, 87, 0.12);
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.pg-signup .art .logo {
+  position: absolute;
+  top: 34px;
+  left: 55px;
+  z-index: 5;
+
+  color: #fff;
+  text-decoration: none;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.pg-signup .art .logo span {
+  color: var(--orange);
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.pg-signup .pic {
+  position: relative;
+  width: min(100%, 470px);
+  height: 310px;
+  margin: 50px auto 30px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  z-index: 2;
+}
+
+.pg-signup .pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(20, 10, 25, 0.35)
+  );
+}
+
+.pg-signup .pic img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   FLOATING FOOD ICONS
+   ========================================================= */
+
+.pg-signup .fl {
+  position: absolute;
+  z-index: 5;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+  font-size: 1.7rem;
+}
+
+.pg-signup .f1 {
+  top: 25px;
+  left: -18px;
+  animation: signupFloat 4s ease-in-out infinite;
+}
+
+.pg-signup .f2 {
+  right: -18px;
+  top: 105px;
+  animation: signupFloat 4.5s ease-in-out infinite 0.4s;
+}
+
+.pg-signup .f3 {
+  bottom: 20px;
+  left: 30px;
+  animation: signupFloat 5s ease-in-out infinite 0.8s;
+}
+
+@keyframes signupFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.pg-signup .art h1 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 560px;
+  margin: 8px auto 10px;
+
+  color: #fff;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+
+.pg-signup .art > p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 520px;
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================================
+   CHIPS
+   ========================================================= */
+
+.pg-signup .chips {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.pg-signup .chips span {
+  padding: 9px 15px;
+
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================================
+   RIGHT FORM AREA
+   ========================================================= */
+
+.pg-signup .sm {
+  position: relative;
+
+  min-height: 100vh;
+  padding: 50px 7vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(255, 107, 44, 0.08),
+      transparent 30%
+    ),
+    var(--cream);
+}
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.pg-signup .x {
+  position: absolute;
+  top: 28px;
+  right: 35px;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--dark);
+  text-decoration: none;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.pg-signup .x:hover {
+  color: #fff;
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   FORM BOX
+   ========================================================= */
+
+.pg-signup .box {
+  width: min(100%, 520px);
+  padding: 15px 0;
+}
+
+.pg-signup .box h2 {
+  margin: 0;
+
+  color: var(--dark);
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.7px;
+}
+
+.pg-signup .st {
+  margin: 9px 0 25px;
+
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.pg-signup .social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 21px;
+}
+
+.pg-signup .social-btn {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid var(--line);
+  border-radius: 13px;
+
+  background: #fff;
+  color: var(--dark);
+
+  font-family: "Nunito", sans-serif;
+  font-size: 0.94rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pg-signup .social-btn i {
+  font-size: 1rem;
+}
+
+.pg-signup .social-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 107, 44, 0.35);
+  box-shadow: 0 10px 25px rgba(33, 21, 37, 0.08);
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.pg-signup .divider {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 7px 0 22px;
+
+  color: #9b8d96;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pg-signup .divider::before,
+.pg-signup .divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.pg-signup .divider span {
+  padding: 0 14px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.pg-signup #signupForm {
+  display: grid;
+  gap: 15px;
+}
+
+.pg-signup #signupForm > label:not(.check-row) {
+  display: block;
+
+  color: var(--dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.pg-signup #signupForm input:not([type="checkbox"]) {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 7px;
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  color: var(--dark);
+  background: #fff;
+
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  outline: none;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 0.94rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.pg-signup #signupForm input:not([type="checkbox"])::placeholder {
+  color: #a99da5;
+}
+
+.pg-signup #signupForm input:not([type="checkbox"]):focus {
+  border-color: var(--orange);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 107, 44, 0.1);
+}
+
+/* =========================================================
+   PASSWORD FIELD
+   ========================================================= */
+
+.pg-signup .pw {
+  position: relative;
+  display: block;
+}
+
+.pg-signup .pw input {
+  padding-right: 52px !important;
+}
+
+.pg-signup #togglePassword,
+.pg-signup #toggleConfirmPassword {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #766771;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.pg-signup #togglePassword:hover,
+.pg-signup #toggleConfirmPassword:hover {
+  color: var(--orange);
+  background: rgba(255, 107, 44, 0.08);
+}
+
+.pg-signup #togglePassword i,
+.pg-signup #toggleConfirmPassword i {
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   TERMS CHECKBOX
+   ========================================================= */
+
+.pg-signup .check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin-top: 1px;
+
+  color: #766771;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.pg-signup .check-row input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 auto;
+  margin-top: 2px;
+
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+
+.pg-signup .check-row a {
+  color: var(--orange-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.pg-signup .check-row a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.pg-signup .submit-btn {
+  position: relative;
+
+  width: 100%;
+  min-height: 54px;
+
+  margin-top: 2px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--orange-dark)
+  );
+
+  color: #fff;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 28px rgba(233, 77, 18, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.pg-signup .submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 17px 34px rgba(233, 77, 18, 0.27);
+}
+
+.pg-signup .submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.pg-signup .submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.pg-signup .submit-btn.loading {
+  pointer-events: none;
+}
+
+.pg-signup .submit-btn.loading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pg-signup .submit-btn.loading span::after {
+  content: "";
+
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+
+  border-radius: 50%;
+
+  animation: signupSpin 0.7s linear infinite;
+}
+
+@keyframes signupSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.pg-signup #signupMessage {
+  min-height: 0;
+  margin: 0;
+
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.5;
+
+  opacity: 0;
+  transform: translateY(-4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pg-signup #signupMessage.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pg-signup #signupMessage.error {
+  color: var(--orange-dark);
+}
+
+.pg-signup #signupMessage.success {
+  color: #16845c;
+}
+
+/* =========================================================
+   BOTTOM LOGIN LINKS
+   ========================================================= */
+
+.pg-signup .alt {
+  margin: 20px 0 0;
+
+  color: #897b85;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.pg-signup .alt a {
+  color: var(--orange-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.pg-signup .alt a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .pg-signup .sw {
+    grid-template-columns: 42% 58%;
+  }
+
+  .pg-signup .art {
+    padding: 40px 30px;
+  }
+
+  .pg-signup .art .logo {
+    left: 30px;
+  }
+
+  .pg-signup .pic {
+    height: 250px;
+  }
+
+  .pg-signup .art h1 {
+    font-size: 2.8rem;
+  }
+
+  .pg-signup .sm {
+    padding: 45px 5vw;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .pg-signup .sw {
+    display: block;
+  }
+
+  .pg-signup .art {
+    min-height: 390px;
+    padding: 80px 25px 35px;
+  }
+
+  .pg-signup .art .logo {
+    top: 25px;
+    left: 25px;
+    font-size: 1.8rem;
+  }
+
+  .pg-signup .pic {
+    width: min(100%, 380px);
+    height: 190px;
+    margin: 10px auto 22px;
+    border-radius: 25px;
+  }
+
+  .pg-signup .art h1 {
+    margin: 0 auto 7px;
+    font-size: 2.35rem;
+  }
+
+  .pg-signup .art > p {
+    max-width: 560px;
+    font-size: 0.9rem;
+  }
+
+  .pg-signup .chips {
+    margin-top: 15px;
+    gap: 7px;
+  }
+
+  .pg-signup .chips span {
+    padding: 7px 11px;
+    font-size: 0.72rem;
+  }
+
+  .pg-signup .fl {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .pg-signup .f1 {
+    left: -8px;
+  }
+
+  .pg-signup .f2 {
+    right: -8px;
+  }
+
+  .pg-signup .f3 {
+    bottom: 10px;
+    left: 20px;
+  }
+
+  .pg-signup .sm {
+    min-height: auto;
+    padding: 55px 24px 40px;
+  }
+
+  .pg-signup .x {
+    top: 18px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .pg-signup .box {
+    width: 100%;
+  }
+
+  .pg-signup .box h2 {
+    font-size: 2.2rem;
+  }
+
+  .pg-signup .social-row {
+    gap: 9px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .pg-signup .art {
+    min-height: 360px;
+    padding: 75px 18px 30px;
+  }
+
+  .pg-signup .art .logo {
+    left: 18px;
+    top: 22px;
+    font-size: 1.65rem;
+  }
+
+  .pg-signup .pic {
+    height: 165px;
+    margin-bottom: 18px;
+    border-radius: 21px;
+  }
+
+  .pg-signup .art h1 {
+    font-size: 2rem;
+  }
+
+  .pg-signup .art > p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .pg-signup .chips {
+    display: none;
+  }
+
+  .pg-signup .sm {
+    padding: 50px 18px 35px;
+  }
+
+  .pg-signup .box h2 {
+    font-size: 2rem;
+  }
+
+  .pg-signup .st {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .pg-signup .social-btn {
+    min-height: 47px;
+    font-size: 0.84rem;
+  }
+
+  .pg-signup #signupForm {
+    gap: 13px;
+  }
+
+  .pg-signup #signupForm input:not([type="checkbox"]) {
+    height: 50px;
+  }
+
+  .pg-signup .check-row {
+    font-size: 0.76rem;
+  }
+
+  .pg-signup .submit-btn {
+    min-height: 52px;
+  }
+
+  .pg-signup .alt {
+    font-size: 0.78rem;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .pg-signup .social-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pg-signup .art {
+    min-height: 335px;
+  }
+
+  .pg-signup .pic {
+    height: 145px;
+  }
+
+  .pg-signup .art h1 {
+    font-size: 1.8rem;
+  }
+
+  .pg-signup .box h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================================
+   SIGNUP - OVERRIDE COMMON .box STYLES
+   ========================================================= */
+
+.pg-signup .box {
+  width: min(100%, 520px) !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  transform: none !important;
+  rotate: none !important;
+}
+
+.pg-signup .box::before,
+.pg-signup .box::after {
+  display: none !important;
+  content: none !important;
+}
+
+.pg-signup .sm {
+  overflow: hidden;
+}
+
+/* Keep form elements clean */
+.pg-signup .social-btn,
+.pg-signup #signupForm input:not([type="checkbox"]),
+.pg-signup .submit-btn {
+  transform: none !important;
+}
+
+.pg-signup .social-btn:hover {
+  transform: translateY(-2px) !important;
+}

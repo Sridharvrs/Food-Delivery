@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stackly | Owner Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/owner-dashboard.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sb" id="sb">
+        <div class="brand">
+          <a class="logo" href="index.html">
+            <img src="images/logo.png" alt="Stackly">
+          </a>
+        </div>
+        <nav>
+          <button data-m="dash" class="on">
+            <i>🏠</i><span>Dashboard</span></button
+          ><button data-m="orders"><i>📦</i><span>Live Orders</span></button
+          ><button data-m="menu"><i>🍕</i><span>Menu Manager</span></button
+          ><button data-m="analytics"><i>📈</i><span>Analytics</span></button
+          ><button data-m="reviews"><i>⭐</i><span>Reviews</span></button
+          ><button data-m="settings"><i>⚙️</i><span>Settings</span></button>
+        </nav>
+        <div class="me">
+          <span>👨‍🍳</span>
+          <div><b class="profileName">Spice Garden</b><small>Owner account</small></div>
+        </div>
+        <button class="lo out">🚪 Logout</button>
+      </aside>
+      <div class="ov" id="ov"></div>
+      <div class="main">
+        <header class="top">
+          <button class="tg" id="tg" aria-label="Toggle menu">☰</button
+          ><b id="ttl">Dashboard</b>
+          <div class="tr">
+            <span class="pill live">● Live</span
+            ><button class="lo out sm">🚪 Logout</button>
+          </div>
+        </header>
+        <main>
+          <section class="mod on" id="dash">
+            <div class="mh">
+              <h2>Restaurant dashboard</h2>
+              <p>Spice Garden — today at a glance.</p>
+            </div>
+            <div class="open">
+              <div>
+                <b>Restaurant status:</b> <span id="os">Open for orders</span>
+              </div>
+              <label class="sw"
+                ><input type="checkbox" id="op" checked /><i></i
+              ></label>
+            </div>
+            <div class="stats">
+              <div class="st c0">
+                <span class="ic">📦</span><b data-n="86">0</b
+                ><small>Today's orders</small>
+              </div>
+              <div class="st c1">
+                <span class="ic">💰</span><b data-n="42380">₹0</b
+                ><small>Revenue today</small>
+              </div>
+              <div class="st c2">
+                <span class="ic">⭐</span><b data-n="312">0</b
+                ><small>Customer reviews</small>
+              </div>
+              <div class="st c3">
+                <span class="ic">⏱️</span><b data-n="18">0</b
+                ><small>Avg prep (min)</small>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>💰 Revenue this week</h3>
+                <div class="bars">
+                  <div>
+                    <span style="--h: 62%"><em>62</em></span
+                    ><small>Mon</small>
+                  </div>
+                  <div>
+                    <span style="--h: 48%"><em>48</em></span
+                    ><small>Tue</small>
+                  </div>
+                  <div>
+                    <span style="--h: 70%"><em>70</em></span
+                    ><small>Wed</small>
+                  </div>
+                  <div>
+                    <span style="--h: 55%"><em>55</em></span
+                    ><small>Thu</small>
+                  </div>
+                  <div>
+                    <span style="--h: 82%"><em>82</em></span
+                    ><small>Fri</small>
+                  </div>
+                  <div>
+                    <span style="--h: 95%"><em>95</em></span
+                    ><small>Sat</small>
+                  </div>
+                  <div>
+                    <span style="--h: 76%"><em>76</em></span
+                    ><small>Sun</small>
+                  </div>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>🔥 Top selling dishes</h3>
+                <ul class="ls">
+                  <li>1. Chicken Biryani — 142 sold</li>
+                  <li>2. Paneer Butter Masala — 118 sold</li>
+                  <li>3. Garlic Naan — 96 sold</li>
+                  <li>4. Gulab Jamun — 77 sold</li>
+                </ul>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🔔 Alerts</h3>
+                <ul class="ls">
+                  <li>⚠️ Basmati rice is low (4 kg left)</li>
+                  <li>🛵 3 riders are waiting for pickup</li>
+                  <li>⭐ New 5-star review from Priya</li>
+                  <li>💳 Payout of ₹38,400 is on its way</li>
+                </ul>
+              </div>
+              <div class="pn">
+                <h3>📅 Today’s schedule</h3>
+                <ul class="ls">
+                  <li>11:00 Lunch rush begins</li>
+                  <li>15:00 Stock delivery</li>
+                  <li>19:00 Dinner rush begins</li>
+                  <li>23:00 Kitchen closes</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="orders">
+            <div class="mh">
+              <h2>Live orders</h2>
+              <p>Move each order through the kitchen.</p>
+            </div>
+            <div class="kb">
+              <div class="col">
+                <h3>🆕 New <span id="c1">2</span></h3>
+                <div id="k1">
+                  <div class="oc">
+                    <b>#4021</b> <small>2 min ago</small>
+                    <p>Ananya R</p>
+                    <p>Biryani x2, Naan x3</p>
+                    <strong>₹640</strong>
+                    <div class="ac">
+                      <button class="go nx">Accept</button
+                      ><button class="b2 rj">Reject</button>
+                    </div>
+                  </div>
+                  <div class="oc">
+                    <b>#4022</b> <small>4 min ago</small>
+                    <p>Karthik S</p>
+                    <p>Paneer Masala, Rice</p>
+                    <strong>₹380</strong>
+                    <div class="ac">
+                      <button class="go nx">Accept</button
+                      ><button class="b2 rj">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <h3>🍳 Preparing <span id="c2">1</span></h3>
+                <div id="k2">
+                  <div class="oc">
+                    <b>#4019</b> <small>12 min ago</small>
+                    <p>Meena P</p>
+                    <p>Veg Thali x2</p>
+                    <strong>₹520</strong>
+                    <div class="ac">
+                      <button class="go nx">Mark ready</button
+                      ><button class="b2 rj">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <h3>✅ Ready <span id="c3">1</span></h3>
+                <div id="k3">
+                  <div class="oc">
+                    <b>#4017</b> <small>20 min ago</small>
+                    <p>Arun V</p>
+                    <p>Chicken Biryani</p>
+                    <strong>₹290</strong>
+                    <div class="ac">
+                      <button class="go nx">Hand to rider</button
+                      ><button class="b2 rj">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🛵 Delivery partners</h3>
+                <div class="tw">
+                  <table id="">
+                    <thead>
+                      <tr>
+                        <th>Rider</th>
+                        <th>Status</th>
+                        <th>Trips</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ravi Kumar</td>
+                        <td><span class="bd y">On delivery</span></td>
+                        <td>11</td>
+                      </tr>
+                      <tr>
+                        <td>Salma B</td>
+                        <td><span class="bd g">Waiting</span></td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>Dinesh M</td>
+                        <td><span class="bd y">On delivery</span></td>
+                        <td>8</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>🧾 Recent orders</h3>
+                <div class="tw">
+                  <table id="">
+                    <thead>
+                      <tr>
+                        <th>Order</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#4016</td>
+                        <td>₹450</td>
+                        <td><span class="bd g">Delivered</span></td>
+                      </tr>
+                      <tr>
+                        <td>#4015</td>
+                        <td>₹210</td>
+                        <td><span class="bd g">Delivered</span></td>
+                      </tr>
+                      <tr>
+                        <td>#4014</td>
+                        <td>₹330</td>
+                        <td><span class="bd r">Refunded</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="menu">
+            <div class="mh">
+              <h2>Menu manager</h2>
+              <p>Add dishes, set prices and control availability.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>➕ Add new dish</h3>
+                <form id="af">
+                  <div class="fg">
+                    <label class="f"
+                      >Dish name<input
+                        id="dn"
+                        required
+                        placeholder="e.g. Mutton Curry" /></label
+                    ><label class="f"
+                      >Price (₹)<input
+                        id="dp"
+                        type="number"
+                        min="1"
+                        required
+                        placeholder="299"
+                    /></label>
+                  </div>
+                  <label class="f"
+                    >Category<select id="dc">
+                      <option>Main course</option>
+                      <option>Starters</option>
+                      <option>Breads</option>
+                      <option>Desserts</option>
+                    </select></label
+                  ><button class="go">Add to menu</button>
+                </form>
+              </div>
+              <div class="pn">
+                <h3>📦 Stock levels</h3>
+                <div class="row">
+                  <span>Basmati rice</span><span class="bd r">4 kg</span>
+                </div>
+                <div class="row">
+                  <span>Paneer</span><span class="bd y">9 kg</span>
+                </div>
+                <div class="row">
+                  <span>Chicken</span><span class="bd g">25 kg</span>
+                </div>
+                <div class="row">
+                  <span>Flour</span><span class="bd g">40 kg</span>
+                </div>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>📋 All dishes</h3>
+              <div class="tw">
+                <table id="mt">
+                  <thead>
+                    <tr>
+                      <th>Dish</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Available</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Chicken Biryani</td>
+                      <td>Main course</td>
+                      <td>₹290</td>
+                      <td>
+                        <label class="sw"
+                          ><input type="checkbox" id="m0" checked /><i></i
+                        ></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Paneer Butter Masala</td>
+                      <td>Main course</td>
+                      <td>₹260</td>
+                      <td>
+                        <label class="sw"
+                          ><input type="checkbox" id="m1" checked /><i></i
+                        ></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Garlic Naan</td>
+                      <td>Breads</td>
+                      <td>₹60</td>
+                      <td>
+                        <label class="sw"
+                          ><input type="checkbox" id="m2" checked /><i></i
+                        ></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Gulab Jamun</td>
+                      <td>Desserts</td>
+                      <td>₹90</td>
+                      <td>
+                        <label class="sw"
+                          ><input type="checkbox" id="m3" checked /><i></i
+                        ></label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>🏷️ Categories</h3>
+              <div class="chips">
+                <button>Main course</button><button>Starters</button
+                ><button>Breads</button><button>Desserts</button
+                ><button>Drinks</button>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="analytics">
+            <div class="mh">
+              <h2>Analytics</h2>
+              <p>Understand when and how customers order.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🕒 Orders by hour</h3>
+                <div class="bars">
+                  <div>
+                    <span style="--h: 12%"><em>12</em></span
+                    ><small>10</small>
+                  </div>
+                  <div>
+                    <span style="--h: 35%"><em>35</em></span
+                    ><small>12</small>
+                  </div>
+                  <div>
+                    <span style="--h: 60%"><em>60</em></span
+                    ><small>14</small>
+                  </div>
+                  <div>
+                    <span style="--h: 28%"><em>28</em></span
+                    ><small>16</small>
+                  </div>
+                  <div>
+                    <span style="--h: 18%"><em>18</em></span
+                    ><small>18</small>
+                  </div>
+                  <div>
+                    <span style="--h: 52%"><em>52</em></span
+                    ><small>20</small>
+                  </div>
+                  <div>
+                    <span style="--h: 88%"><em>88</em></span
+                    ><small>22</small>
+                  </div>
+                  <div>
+                    <span style="--h: 40%"><em>40</em></span
+                    ><small>24</small>
+                  </div>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>🥧 Order types</h3>
+                <div class="donut"></div>
+                <ul class="ls">
+                  <li>🟠 Delivery — 70%</li>
+                  <li>🟣 Pickup — 20%</li>
+                  <li>🟡 Dine-in — 10%</li>
+                </ul>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>👑 Top customers</h3>
+                <div class="tw">
+                  <table id="">
+                    <thead>
+                      <tr>
+                        <th>Customer</th>
+                        <th>Orders</th>
+                        <th>Spent</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ananya R</td>
+                        <td>24</td>
+                        <td>₹9,800</td>
+                      </tr>
+                      <tr>
+                        <td>Karthik S</td>
+                        <td>19</td>
+                        <td>₹7,450</td>
+                      </tr>
+                      <tr>
+                        <td>Meena P</td>
+                        <td>15</td>
+                        <td>₹6,200</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>📊 Key numbers</h3>
+                <ul class="ls">
+                  <li>Repeat customers: 62%</li>
+                  <li>Cancellation rate: 2.1%</li>
+                  <li>Average order value: ₹492</li>
+                  <li>Delivery on time: 94%</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="reviews">
+            <div class="mh">
+              <h2>Customer reviews</h2>
+              <p>Read feedback and reply.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>⭐ Rating breakdown</h3>
+                <div class="rr">
+                  <span>5 ★</span>
+                  <div class="prog"><i style="width: 68%"></i></div>
+                  <span>68%</span>
+                </div>
+                <div class="rr">
+                  <span>4 ★</span>
+                  <div class="prog"><i style="width: 22%"></i></div>
+                  <span>22%</span>
+                </div>
+                <div class="rr">
+                  <span>3 ★</span>
+                  <div class="prog"><i style="width: 6%"></i></div>
+                  <span>6%</span>
+                </div>
+                <div class="rr">
+                  <span>2 ★</span>
+                  <div class="prog"><i style="width: 3%"></i></div>
+                  <span>3%</span>
+                </div>
+                <div class="rr">
+                  <span>1 ★</span>
+                  <div class="prog"><i style="width: 1%"></i></div>
+                  <span>1%</span>
+                </div>
+              </div>
+              <div class="pn">
+                <h3>💬 Feedback summary</h3>
+                <ul class="ls">
+                  <li>👍 Loved: taste, packaging, portion size</li>
+                  <li>👎 Improve: delivery speed at peak hours</li>
+                  <li>🏆 You are in the top 10% in Coimbatore</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>Priya · ★★★★★</h3>
+              <p>Hot biryani and generous portion. Delivered early!</p>
+              <button class="b2 rp">Reply</button>
+              <div class="rbx">
+                <input placeholder="Write a reply" /><button class="go sd">
+                  Send
+                </button>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>Arun · ★★★★☆</h3>
+              <p>Great taste, but the naan was a bit cold.</p>
+              <button class="b2 rp">Reply</button>
+              <div class="rbx">
+                <input placeholder="Write a reply" /><button class="go sd">
+                  Send
+                </button>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>Divya · ★★★★★</h3>
+              <p>Best paneer masala in town.</p>
+              <button class="b2 rp">Reply</button>
+              <div class="rbx">
+                <input placeholder="Write a reply" /><button class="go sd">
+                  Send
+                </button>
+              </div>
+            </div>
+          </section>
+          <section class="mod" id="settings">
+            <div class="mh">
+              <h2>Settings</h2>
+              <p>Restaurant profile, timings, coupons and payouts.</p>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🏪 Restaurant profile</h3>
+                <form id="sf">
+                  <label class="f">Name<input value="Spice Garden" /></label
+                  ><label class="f"
+                    >Phone<input value="+91 98765 11122" /></label
+                  ><label class="f"
+                    >Address<input
+                      value="12 Race Course Rd, Coimbatore" /></label
+                  ><button class="go">Save profile</button>
+                </form>
+              </div>
+              <div class="pn">
+                <h3>🕒 Opening hours</h3>
+                <div class="row">
+                  <span>Mon–Fri</span><span>11:00 – 23:00</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="tMon–Fri" checked /><i></i
+                  ></label>
+                </div>
+                <div class="row">
+                  <span>Saturday</span><span>11:00 – 23:00</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="tSaturday" checked /><i></i
+                  ></label>
+                </div>
+                <div class="row">
+                  <span>Sunday</span><span>11:00 – 23:00</span
+                  ><label class="sw"
+                    ><input type="checkbox" id="tSunday" checked /><i></i
+                  ></label>
+                </div>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="pn">
+                <h3>🎟️ Create coupon</h3>
+                <form id="cf">
+                  <div class="fg">
+                    <label class="f"
+                      >Code<input
+                        id="cc"
+                        required
+                        placeholder="SPICE15" /></label
+                    ><label class="f"
+                      >Discount %<input
+                        id="cd"
+                        type="number"
+                        min="1"
+                        max="90"
+                        required
+                        placeholder="15"
+                    /></label>
+                  </div>
+                  <button class="go">Create coupon</button>
+                </form>
+                <ul class="ls" id="cl">
+                  <li>WELCOME10 — 10% off</li>
+                </ul>
+              </div>
+              <div class="pn">
+                <h3>💳 Payout & delivery</h3>
+                <ul class="ls">
+                  <li>Bank: HDFC ••••4521</li>
+                  <li>Payout cycle: Weekly (Monday)</li>
+                  <li>Delivery radius: 8 km</li>
+                  <li>Minimum order: ₹150</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pn">
+              <h3>👥 Staff</h3>
+              <div class="tw">
+                <table id="">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Role</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Suresh</td>
+                      <td>Head chef</td>
+                      <td><span class="bd g">On shift</span></td>
+                    </tr>
+                    <tr>
+                      <td>Lakshmi</td>
+                      <td>Cashier</td>
+                      <td><span class="bd g">On shift</span></td>
+                    </tr>
+                    <tr>
+                      <td>Mohan</td>
+                      <td>Packing</td>
+                      <td><span class="bd y">Off</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="dlg" id="dlg">
+      <div class="bx">
+        <h3>Logout?</h3>
+        <p>You will return to the login page.</p>
+        <button class="b2" id="no">Stay</button
+        ><button class="b1" id="yes">Logout</button>
+      </div>
+    </div>
+    <div class="toast" id="ts"></div>
+    <script src="js/owner-dashboard.js"></script>
+  </body>
+</html>

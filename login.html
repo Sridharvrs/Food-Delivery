@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stackly | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body class="pg-login">
+    <main class="lw">
+      <aside class="art">
+        <a class="logo" href="index.html">
+          <img src="images/logo.png" alt="Stackly">
+        </a>
+        <div class="pic">
+          <img
+            src="images/food6.webp"
+            alt="Fresh pizza"
+          /><span class="fl f1">🍕</span><span class="fl f2">🍔</span
+          ><span class="fl f3">🛵</span>
+        </div>
+        <h1>Hungry? Let’s get you in.</h1>
+        <p>
+          Sign in to track orders, save addresses and unlock member-only deals.
+        </p>
+        <div class="chips">
+          <span>⭐ 4.8 rating</span><span>🛵 30 min delivery</span
+          ><span>🎁 WELCOME50</span>
+        </div>
+      </aside>
+      <section class="fm">
+        <a class="x" href="index.html" aria-label="Close login" title="Close"
+          >✕</a
+        >
+        <div class="box">
+          <h2 id="t">Welcome back, foodie!</h2>
+          <p id="st" class="st">
+            Login as a customer to order your favourites.
+          </p>
+          <div class="roles" role="tablist">
+            <i class="slide"></i
+            ><button
+              class="on"
+              data-r="Customer"
+              data-t="Welcome back, foodie!"
+              data-s="Login as a customer to order your favourites."
+            >
+              🍽️ Customer</button
+            ><button
+              data-r="Restaurant Owner"
+              data-t="Manage your kitchen"
+              data-s="Login as a restaurant owner to manage menu and orders."
+            >
+              🏪 Restaurant Owner
+            </button>
+          </div>
+          <form id="f">
+            <label id="rid" class="hide"
+              >Restaurant ID<input placeholder="e.g. FR-1024"
+            /></label>
+            <label
+              >Email<input type="email" placeholder="you@example.com" required
+            /></label>
+            <label>
+                Password
+                <span class="pw">
+                <input
+                  id="pw"
+                  type="password"
+                  placeholder="Enter password"
+                  required
+                />
+                <button type="button" id="eye" aria-label="Show password">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+            </span>
+            </label>
+            <div class="row">
+              <label class="ck"><input type="checkbox" /> Remember me</label
+              ><a href="contact.html">Forgot password?</a>
+            </div>
+            <button class="btn go">
+              Login as <span id="rn">Customer</span>
+            </button>
+            <p class="ok" id="ok"></p>
+          </form>
+          <p class="alt">
+            New here? <a href="signup.html">Create an account</a> ·
+            <a href="index.html">Back to home</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="js/login.js"></script>
+  </body>
+</html>

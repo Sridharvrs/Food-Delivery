@@ -1,0 +1,679 @@
+body.pg-about {
+  --panel: #5b2a86;
+}
+.card {
+  background: #ffd23f;
+  color: #1a1a1a;
+  border: 6px ridge #7a3e00;
+  border-radius: 60px 10px 60px 10px;
+}
+.tl {
+  border-left: 6px solid #fff;
+  padding-left: 24px;
+  display: grid;
+  gap: 20px;
+}
+.tl div {
+  background: #2b1b3d;
+  padding: 14px 18px;
+  border-radius: 12px;
+  position: relative;
+}
+.tl div:before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  background: #ffc93c;
+  border-radius: 50%;
+}
+.tl b {
+  color: #ffc93c;
+  font: 800 1.4rem Baloo 2;
+  margin-right: 8px;
+}
+
+/* =========================================================
+   PREMIUM ABOUT PAGE
+========================================================= */
+
+.pg-about {
+  --about-dark: #21152c;
+  --about-purple: #5b2a86;
+  --about-orange: #ff5b2d;
+  --about-yellow: #ffc93c;
+  --about-cream: #fff8ef;
+  --about-muted: #776d7c;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.pg-about .about-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #ff5b2d;
+}
+
+.pg-about .about-eyebrow.light {
+  color: #ffc93c;
+}
+
+
+/* =========================================================
+   PREMIUM STATS
+========================================================= */
+
+.pg-about .about-stats {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0;
+  background: #21152c;
+  color: #fff;
+}
+
+.pg-about .about-stats::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -180px;
+  top: -220px;
+  border-radius: 50%;
+  background: rgba(255, 201, 60, 0.08);
+}
+
+.pg-about .about-stats::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: -160px;
+  bottom: -180px;
+  border-radius: 50%;
+  background: rgba(255, 91, 45, 0.08);
+}
+
+.pg-about .about-stats-head {
+  max-width: 650px;
+  margin-bottom: 65px;
+}
+
+.pg-about .about-stats-head h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  color: #fff;
+}
+
+.pg-about .about-stats-head p {
+  max-width: 600px;
+  margin: 0;
+  color: rgba(255,255,255,0.68);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.pg-about .about-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.pg-about .about-stat {
+  min-height: 190px;
+  padding: 35px 28px;
+  background: #21152c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pg-about .about-stat strong {
+  display: block;
+  margin-bottom: 8px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1;
+  color: #ffc93c;
+}
+
+.pg-about .about-stat span {
+  color: rgba(255,255,255,0.68);
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.pg-about .about-mission {
+  width: min(1200px, calc(100% - 40px));
+  margin: 120px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.pg-about .about-mission-image {
+  position: relative;
+  min-height: 620px;
+  border-radius: 34px;
+  overflow: hidden;
+}
+
+.pg-about .about-mission-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.pg-about .about-mission-image:hover img {
+  transform: scale(1.04);
+}
+
+.pg-about .mission-badge {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 20px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+
+  color: #21152c;
+}
+
+.pg-about .mission-badge span {
+  font-size: 1.5rem;
+}
+
+.pg-about .mission-badge b {
+  font-size: 0.9rem;
+}
+
+.pg-about .about-mission-content h2 {
+  margin: 0 0 25px;
+  max-width: 600px;
+  font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+  line-height: 0.98;
+  color: #21152c;
+}
+
+.pg-about .about-mission-content > p {
+  max-width: 570px;
+  margin: 0 0 15px;
+  color: #776d7c;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.pg-about .mission-points {
+  margin-top: 35px;
+  display: grid;
+  gap: 20px;
+}
+
+.pg-about .mission-points > div {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.pg-about .mission-points > div > span {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #fff0e9;
+  color: #ff5b2d;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.pg-about .mission-points h3 {
+  margin: 0 0 3px;
+  color: #21152c;
+}
+
+.pg-about .mission-points p {
+  margin: 0;
+  color: #776d7c;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HOW FOODRUSH WORKS
+========================================================= */
+
+.pg-about .about-process {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: #f3eadf;
+}
+
+.pg-about .about-process-title {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.pg-about .about-process-title h2 {
+  margin: 0 0 15px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  color: #21152c;
+}
+
+.pg-about .about-process-title p {
+  margin: 0;
+  color: #776d7c;
+  font-size: 1.05rem;
+}
+
+.pg-about .process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.pg-about .process-card {
+  position: relative;
+  min-height: 330px;
+  padding: 30px;
+
+  background: #fff;
+  border: 1px solid rgba(33,21,44,0.08);
+  border-radius: 28px;
+
+  box-shadow: 0 15px 45px rgba(33,21,44,0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.pg-about .process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(33,21,44,0.12);
+}
+
+.pg-about .process-number {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #c8bdc9;
+}
+
+.pg-about .process-icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 45px;
+
+  border-radius: 20px;
+  background: #fff0e9;
+
+  font-size: 1.8rem;
+}
+
+.pg-about .process-card h3 {
+  margin: 0 0 12px;
+  color: #21152c;
+  font-size: 1.25rem;
+}
+
+.pg-about .process-card p {
+  margin: 0;
+  color: #776d7c;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.pg-about .about-testimonials {
+  padding: 120px 0;
+  background: #fff8ef;
+}
+
+.pg-about .about-testimonials .section-title {
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.pg-about .about-testimonials .section-title h2 {
+  margin: 0 0 15px;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 0.98;
+  color: #21152c;
+}
+
+.pg-about .about-testimonials .section-title p {
+  margin: 0;
+  color: #776d7c;
+}
+
+.pg-about .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pg-about .testimonial-card {
+  padding: 38px;
+  background: #fff;
+  border: 1px solid rgba(33,21,44,0.08);
+  border-radius: 28px;
+
+  box-shadow: 0 15px 45px rgba(33,21,44,0.05);
+
+  transition: transform 0.3s ease;
+}
+
+.pg-about .testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+.pg-about .testimonial-card.featured {
+  background: #21152c;
+  color: #fff;
+  transform: translateY(-12px);
+}
+
+.pg-about .testimonial-card.featured:hover {
+  transform: translateY(-18px);
+}
+
+.pg-about .testimonial-stars {
+  margin-bottom: 25px;
+  color: #ffb800;
+  letter-spacing: 3px;
+}
+
+.pg-about .testimonial-card > p {
+  min-height: 145px;
+  margin: 0 0 30px;
+
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #776d7c;
+}
+
+.pg-about .testimonial-card.featured > p {
+  color: rgba(255,255,255,0.72);
+}
+
+.pg-about .testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding-top: 20px;
+  border-top: 1px solid rgba(33,21,44,0.1);
+}
+
+.pg-about .featured .testimonial-user {
+  border-top-color: rgba(255,255,255,0.12);
+}
+
+.pg-about .testimonial-avatar {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #ff5b2d;
+  color: #fff;
+  font-weight: 800;
+}
+
+.pg-about .testimonial-user h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #21152c;
+}
+
+.pg-about .featured .testimonial-user h3 {
+  color: #fff;
+}
+
+.pg-about .testimonial-user span {
+  font-size: 0.82rem;
+  color: #9a909e;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.pg-about .about-final {
+  position: relative;
+  min-height: 600px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25,14,32,0.95),
+      rgba(25,14,32,0.65),
+      rgba(25,14,32,0.45)
+    ),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2200&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.pg-about .about-final-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(900px, calc(100% - 40px));
+  text-align: center;
+  color: #fff;
+}
+
+.pg-about .about-final-content h2 {
+  margin: 0 auto 20px;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+}
+
+.pg-about .about-final-content p {
+  max-width: 650px;
+  margin: 0 auto 35px;
+
+  color: rgba(255,255,255,0.75);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.pg-about .about-final-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pg-about .about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 0 25px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.pg-about .about-btn:hover {
+  transform: translateY(-3px);
+}
+
+.pg-about .about-btn.primary {
+  background: #ff5b2d;
+  color: #fff;
+}
+
+.pg-about .about-btn.secondary {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .pg-about .about-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pg-about .about-mission {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin: 80px auto;
+  }
+
+  .pg-about .about-mission-image,
+  .pg-about .about-mission-image img {
+    min-height: 500px;
+  }
+
+  .pg-about .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pg-about .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pg-about .testimonial-card.featured {
+    transform: none;
+  }
+
+  .pg-about .testimonial-card.featured:hover {
+    transform: translateY(-6px);
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .pg-about .about-stats {
+    padding: 80px 0;
+  }
+
+  .pg-about .about-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pg-about .about-stat {
+    min-height: 145px;
+    padding: 25px 18px;
+  }
+
+  .pg-about .about-stat strong {
+    font-size: 2.5rem;
+  }
+
+  .pg-about .about-mission {
+    width: min(100% - 28px, 1200px);
+    margin: 65px auto;
+  }
+
+  .pg-about .about-mission-image,
+  .pg-about .about-mission-image img {
+    min-height: 400px;
+  }
+
+  .pg-about .about-process,
+  .pg-about .about-testimonials {
+    padding: 80px 0;
+  }
+
+  .pg-about .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pg-about .process-card {
+    min-height: 280px;
+  }
+
+  .pg-about .testimonial-card {
+    padding: 28px;
+  }
+
+  .pg-about .testimonial-card > p {
+    min-height: auto;
+  }
+
+  .pg-about .about-final {
+    min-height: 540px;
+  }
+
+  .pg-about .about-final-content h2 {
+    font-size: 3.2rem;
+  }
+
+  .pg-about .about-btn {
+    width: 100%;
+  }
+}

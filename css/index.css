@@ -1,0 +1,1006 @@
+body.pg-index {
+  --panel: #2b1b3d;
+}
+.card {
+  background: #fff;
+  color: #222;
+  border: 4px solid #ff5a1f;
+  border-radius: 24px;
+  box-shadow: 10px 10px 0 #ffc93c;
+}
+.card .pr {
+  color: #b83200;
+}
+body .s2 .grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* =========================================================
+   PREMIUM HOMEPAGE SECTIONS
+========================================================= */
+
+.premium-wrap {
+  width: min(1200px, 92%);
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--o);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.eyebrow.light {
+  color: var(--y);
+}
+
+
+/* =========================================================
+   FEATURED RESTAURANT
+========================================================= */
+
+.premium-feature {
+  position: relative;
+  padding: 110px 0;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 201, 60, 0.16),
+      transparent 28%
+    ),
+    #fffaf3;
+  color: #222;
+  overflow: hidden;
+}
+
+.premium-feature:before {
+  content: "FOOD";
+  position: absolute;
+  right: -40px;
+  bottom: -90px;
+  font: 900 14rem/1 "Baloo 2";
+  color: rgba(43, 27, 61, 0.035);
+  pointer-events: none;
+}
+
+.feature-image {
+  position: relative;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 18px 18px 0 var(--y);
+}
+
+.feature-rating {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  background: #fff;
+  color: #222;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-rating span {
+  color: #777;
+  font-weight: 700;
+}
+
+.premium-wrap:has(.feature-image) {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.feature-content h2 {
+  font: 800 clamp(2.7rem, 5vw, 4.8rem)/0.98 "Baloo 2";
+  color: var(--p);
+  margin-bottom: 25px;
+}
+
+.feature-content p {
+  max-width: 520px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 28px;
+}
+
+.feature-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.feature-info span {
+  padding: 10px 14px;
+  border-radius: 50px;
+  background: #fff;
+  border: 2px solid #eee;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CRAVING SECTION
+========================================================= */
+
+.craving-section {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.craving-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 8, 28, 0.94) 0%,
+      rgba(18, 8, 28, 0.72) 45%,
+      rgba(18, 8, 28, 0.25) 100%
+    );
+}
+
+.craving-content {
+  position: relative;
+  z-index: 3;
+  width: min(1200px, 92%);
+  margin: auto;
+  color: #fff;
+}
+
+.craving-content h2 {
+  font: 800 clamp(3rem, 7vw, 6rem)/0.92 "Baloo 2";
+  margin-bottom: 25px;
+}
+
+.craving-content p {
+  max-width: 500px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.floating-food {
+  position: absolute;
+  z-index: 3;
+  font-size: 5rem;
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.35));
+  animation: premiumFloat 4s ease-in-out infinite;
+}
+
+.food-a {
+  top: 18%;
+  right: 15%;
+}
+
+.food-b {
+  bottom: 18%;
+  right: 8%;
+  animation-delay: 1s;
+}
+
+.food-c {
+  top: 50%;
+  right: 35%;
+  animation-delay: 2s;
+}
+
+@keyframes premiumFloat {
+  50% {
+    transform: translateY(-25px) rotate(8deg);
+  }
+}
+
+
+/* =========================================================
+   CHEF'S CHOICE
+========================================================= */
+
+.chef-section {
+  padding: 110px 0;
+  background: #2b1b3d;
+  color: #fff;
+  overflow: hidden;
+}
+
+.chef-heading {
+  margin-bottom: 55px;
+}
+
+.chef-heading h2 {
+  font: 800 clamp(2.8rem, 5vw, 4.8rem)/0.95 "Baloo 2";
+  margin-bottom: 18px;
+}
+
+.chef-heading p {
+  max-width: 550px;
+  color: rgba(255,255,255,0.72);
+  font-size: 1.1rem;
+}
+
+.chef-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 25px;
+}
+
+.chef-main {
+  overflow: hidden;
+  border-radius: 32px;
+  background: #fff;
+  color: #222;
+}
+
+.chef-image {
+  height: 470px;
+  overflow: hidden;
+}
+
+.chef-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.8s;
+}
+
+.chef-main:hover .chef-image img {
+  transform: scale(1.08);
+}
+
+.chef-details {
+  min-height: 145px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.chef-details h3 {
+  font-size: 1.6rem;
+  margin: 7px 0;
+}
+
+.chef-details p {
+  color: #777;
+}
+
+.chef-details strong {
+  font-size: 2rem;
+  color: var(--o);
+  white-space: nowrap;
+}
+
+.dish-tag {
+  color: var(--o);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.chef-side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mini-dish {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  background: #fff;
+  color: #222;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.mini-dish:hover {
+  transform: translateX(-8px);
+}
+
+.mini-dish img {
+  width: 145px;
+  height: 100%;
+  min-height: 145px;
+  object-fit: cover;
+}
+
+.mini-dish > div {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mini-dish span {
+  font-size: 0.7rem;
+  color: var(--o);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.mini-dish h3 {
+  margin: 6px 0;
+}
+
+.mini-dish strong {
+  color: var(--o);
+}
+
+
+/* =========================================================
+   SPECIAL OFFER
+========================================================= */
+
+.offer-banner {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.offer-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.offer-bg:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(43, 27, 61, 0.98),
+      rgba(43, 27, 61, 0.78),
+      rgba(43, 27, 61, 0.35)
+    );
+}
+
+.offer-content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+.offer-number {
+  font: 900 clamp(5rem, 12vw, 10rem)/0.75 "Baloo 2";
+  color: var(--y);
+  text-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+}
+
+.offer-number span {
+  font-size: 0.55em;
+}
+
+.offer-content h2 {
+  font: 800 clamp(2.5rem, 5vw, 5rem)/0.9 "Baloo 2";
+  margin: 25px 0;
+}
+
+.offer-content p {
+  max-width: 500px;
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+}
+
+.promo-code {
+  display: flex;
+  width: min(400px, 100%);
+  margin-bottom: 28px;
+  background: #fff;
+  border: 3px solid var(--y);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.promo-code span {
+  flex: 1;
+  padding: 15px;
+  color: var(--p);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.promo-code button {
+  padding: 15px 20px;
+  border: 0;
+  background: var(--y);
+  color: var(--p);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-section {
+  padding: 110px 0;
+  background: #fffaf3;
+  color: #222;
+}
+
+.experience-heading {
+  margin-bottom: 55px;
+}
+
+.experience-heading h2 {
+  color: var(--p);
+  font: 800 clamp(2.8rem, 5vw, 4.8rem)/0.95 "Baloo 2";
+  margin-bottom: 18px;
+}
+
+.experience-heading p {
+  color: #666;
+  max-width: 560px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.experience-card {
+  min-height: 340px;
+  padding: 30px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.45s;
+}
+
+.experience-card:hover {
+  transform: translateY(-12px);
+}
+
+.exp-one {
+  background: #ffc93c;
+}
+
+.exp-two {
+  background: #ffb6a3;
+}
+
+.exp-three {
+  background: #bfe7d2;
+}
+
+.exp-four {
+  background: #d9c7ff;
+}
+
+.experience-icon {
+  font-size: 3.2rem;
+  margin-bottom: 55px;
+}
+
+.experience-card > span {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-weight: 900;
+  opacity: 0.5;
+}
+
+.experience-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  line-height: 1.7;
+  color: rgba(0,0,0,0.68);
+}
+
+
+/* =========================================================
+   APP SECTION
+========================================================= */
+
+.app-section {
+  padding: 100px 0 0;
+  background: #12081c;
+  color: #fff;
+  overflow: hidden;
+}
+
+.app-wrap {
+  width: min(1100px, 92%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  align-items: end;
+  gap: 80px;
+}
+
+.app-content {
+  padding-bottom: 100px;
+}
+
+.app-content h2 {
+  font: 800 clamp(3rem, 6vw, 5.5rem)/0.92 "Baloo 2";
+  margin-bottom: 25px;
+}
+
+.app-content p {
+  max-width: 500px;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-btn {
+  min-width: 190px;
+  padding: 12px 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.app-btn:hover {
+  background: #fff;
+  color: var(--p);
+  transform: translateY(-4px);
+}
+
+.app-btn > span {
+  font-size: 2rem;
+}
+
+.app-btn small {
+  display: block;
+  font-size: 0.65rem;
+}
+
+.app-btn b {
+  font-size: 1.1rem;
+}
+
+.phone-area {
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  width: 290px;
+  height: 580px;
+  padding: 10px;
+  background: #111;
+  border: 5px solid #444;
+  border-radius: 42px 42px 0 0;
+  box-shadow: 0 0 0 8px rgba(255,255,255,0.04);
+  transform: translateY(50px);
+}
+
+.phone-top {
+  width: 100px;
+  height: 22px;
+  background: #111;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.phone-screen {
+  height: 100%;
+  border-radius: 32px 32px 0 0;
+  overflow: hidden;
+  background: #fffaf3;
+  color: #222;
+}
+
+.phone-header {
+  height: 65px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--p);
+}
+
+.phone-screen > img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.phone-card {
+  margin: -20px 15px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.phone-card small {
+  color: var(--o);
+  font-weight: 900;
+}
+
+.phone-card h3 {
+  margin: 5px 0;
+}
+
+
+/* =========================================================
+   FOOD GALLERY
+========================================================= */
+
+.gallery-section {
+  padding: 110px 0;
+  background: #fff;
+  color: #222;
+}
+
+.gallery-heading {
+  margin-bottom: 45px;
+}
+
+.gallery-heading h2 {
+  color: var(--p);
+  font: 800 clamp(3rem, 6vw, 5rem)/0.9 "Baloo 2";
+  margin-bottom: 15px;
+}
+
+.gallery-heading p {
+  color: #777;
+}
+
+.food-gallery {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  grid-template-rows: 240px 240px;
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.gallery-large {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.7s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item span {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  padding: 9px 15px;
+  border-radius: 50px;
+  background: #fff;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+  min-height: 580px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.final-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 8, 28, 0.76);
+}
+
+.final-content {
+  width: min(850px, 92%);
+  position: relative;
+  z-index: 2;
+}
+
+.final-content h2 {
+  font: 800 clamp(4rem, 9vw, 8rem)/0.85 "Baloo 2";
+  margin-bottom: 25px;
+}
+
+.final-content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   PREMIUM BUTTON
+========================================================= */
+
+.premium-btn {
+  border: 0 !important;
+  padding: 15px 30px;
+  box-shadow: 0 8px 0 #a83208 !important;
+}
+
+.premium-btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .premium-wrap:has(.feature-image) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .feature-image img {
+    height: 450px;
+  }
+
+  .chef-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app-wrap {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 30px;
+  }
+
+  .food-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 220px 220px;
+  }
+
+  .gallery-large {
+    grid-row: span 2;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .premium-feature,
+  .chef-section,
+  .experience-section,
+  .gallery-section {
+    padding: 70px 0;
+  }
+
+  .feature-image img {
+    height: 330px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 0 var(--y);
+  }
+
+  .feature-rating {
+    left: 15px;
+    right: auto;
+    bottom: 15px;
+  }
+
+  .craving-section,
+  .offer-banner,
+  .final-cta {
+    min-height: 550px;
+    background-attachment: scroll;
+  }
+
+  .craving-content h2 {
+    font-size: 3.5rem;
+  }
+
+  .floating-food {
+    font-size: 3rem;
+  }
+
+  .food-a {
+    right: 8%;
+    top: 10%;
+  }
+
+  .food-b {
+    right: 5%;
+    bottom: 10%;
+  }
+
+  .food-c {
+    display: none;
+  }
+
+  .chef-image {
+    height: 300px;
+  }
+
+  .chef-details {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mini-dish {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .mini-dish img {
+    width: 110px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    min-height: 280px;
+  }
+
+  .app-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .app-content {
+    padding-bottom: 20px;
+  }
+
+  .app-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .app-buttons {
+    justify-content: center;
+  }
+
+  .phone {
+    width: 260px;
+    height: 520px;
+  }
+
+  .food-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 230px 180px 180px;
+  }
+
+  .gallery-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .final-content h2 {
+    font-size: 4rem;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .premium-wrap {
+    width: min(92%, 1200px);
+  }
+
+  .feature-content h2,
+  .chef-heading h2,
+  .experience-heading h2,
+  .gallery-heading h2 {
+    font-size: 3rem;
+  }
+
+  .feature-info {
+    flex-direction: column;
+  }
+
+  .feature-info span {
+    text-align: center;
+  }
+
+  .chef-details h3 {
+    font-size: 1.35rem;
+  }
+
+  .promo-code {
+    flex-direction: column;
+  }
+
+  .promo-code button {
+    width: 100%;
+  }
+
+  .app-buttons {
+    flex-direction: column;
+  }
+
+  .app-btn {
+    width: 100%;
+  }
+
+  .food-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 230px);
+  }
+
+  .gallery-large {
+    grid-column: auto;
+  }
+
+  .final-content h2 {
+    font-size: 3.5rem;
+  }
+
+}

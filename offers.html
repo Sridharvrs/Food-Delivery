@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stackly | Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/offers.css" />
+  </head>
+  <body class="pg-offers">
+    <header class="hd">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="Stackly">
+      </a>
+      <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="offers.html" class="cur">Offers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><button class="btn lg" id="loginBtn">Login</button></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="marq">
+      <div>
+        🔥 Free delivery over ₹299 &nbsp;•&nbsp; 🛵 30-minute promise
+        &nbsp;•&nbsp; 🎁 Use WELCOME50 &nbsp;•&nbsp; 🔥 Free delivery over ₹299
+        &nbsp;•&nbsp; 🛵 30-minute promise &nbsp;•&nbsp; 🎁 Use WELCOME50
+        &nbsp;•&nbsp;
+      </div>
+    </div>
+    <main>
+      <section class="s s1 hero">
+        <div class="wrap hg">
+          <div>
+            <h1 class="reveal">Deals that taste better</h1>
+            <p class="reveal">
+              Use a coupon code at checkout and watch the total drop.
+            </p>
+            <div class="chips">
+              <span>⭐ 4.8 rating</span><span>🛵 30 min delivery</span
+              ><span>✅ 500+ restaurants</span>
+            </div>
+          </div>
+          <div class="himg">
+            <img
+              src="images/food2.webp"
+              alt="hero food"
+            /><span class="fl f1">🍕</span><span class="fl f2">🍔</span
+            ><span class="fl f3">🛵</span>
+          </div>
+        </div>
+      </section>
+      <section class="s s2">
+        <div class="wrap">
+          <h2 class="reveal">Today’s coupons</h2>
+          <p class="sub reveal">Tap to copy, paste at checkout.</p>
+          <div class="grid">
+            <article class="card tc reveal">
+              <div class="ic">🎉</div>
+              <div class="cb">
+                <h3>WELCOME50</h3>
+                <p>
+                  50% off your first order, up to ₹120.
+                  <button class="cp" data-code="WELCOME50">Copy code</button>
+                </p>
+              </div>
+            </article>
+            <article class="card tc reveal">
+              <div class="ic">🍕</div>
+              <div class="cb">
+                <h3>PIZZA100</h3>
+                <p>
+                  ₹100 off pizza orders above ₹399.
+                  <button class="cp" data-code="PIZZA100">Copy code</button>
+                </p>
+              </div>
+            </article>
+            <article class="card tc reveal">
+              <div class="ic">🚚</div>
+              <div class="cb">
+                <h3>FREEDEL</h3>
+                <p>
+                  Free delivery above ₹299.
+                  <button class="cp" data-code="FREEDEL">Copy code</button>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="s s3">
+        <div class="wrap">
+          <h2 class="reveal">Flash deal ends in</h2>
+          <p class="sub reveal">
+            Extra 30% off all burgers until the clock hits zero.
+          </p>
+          <div class="timer">
+            <div><b id="h">00</b>hours</div>
+            <div><b id="m">00</b>mins</div>
+            <div><b id="s">00</b>secs</div>
+          </div>
+        </div>
+      </section>
+      <section class="s s4">
+        <div class="wrap">
+          <h2 class="reveal">Weekly specials</h2>
+          <p class="sub reveal">A different treat every week.</p>
+          <div class="grid">
+            <article class="card reveal">
+              <img
+                src="images/food3.webp"
+                alt="Monday burgers"
+                loading="lazy"
+              />
+              <div class="cb">
+                <h3>Monday burgers</h3>
+                <p>Buy one, get one free.</p>
+              </div>
+            </article>
+            <article class="card reveal">
+              <img
+                src="images/food6.webp"
+                alt="Friday pizza night"
+                loading="lazy"
+              />
+              <div class="cb">
+                <h3>Friday pizza night</h3>
+                <p>Large pizza at medium price.</p>
+              </div>
+            </article>
+            <article class="card reveal">
+              <img
+                src="images/food5.webp"
+                alt="Sunday brunch"
+                loading="lazy"
+              />
+              <div class="cb">
+                <h3>Sunday brunch</h3>
+                <p>Free drink with any brunch.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- =====================================================
+     PREMIUM OFFER BANNER
+     ===================================================== -->
+
+<section class="offer-banner">
+  <div class="offer-banner-content reveal">
+    <span class="eyebrow">🔥 THIS WEEK ONLY</span>
+
+    <h2>
+      Good food deserves
+      a great deal.
+    </h2>
+
+    <p>
+      Grab exclusive Stackly offers, discover new favourites,
+      and save more on every order.
+    </p>
+
+    <a href="error.html" class="offer-btn">
+      Explore the menu →
+    </a>
+  </div>
+</section>
+
+<!-- =====================================================
+     SAVINGS SECTION
+     ===================================================== -->
+
+<section class="savings-section">
+  <div class="wrap">
+
+    <h2 class="reveal">More ways to save</h2>
+
+    <p class="sub reveal">
+      Little savings that add up to big cravings.
+    </p>
+
+    <div class="savings-grid">
+
+      <article class="saving-item reveal">
+        <span>🛵</span>
+        <h3>Free Delivery</h3>
+        <p>
+          Get free delivery on eligible orders above ₹299.
+        </p>
+      </article>
+
+      <article class="saving-item reveal">
+        <span>💳</span>
+        <h3>Card Offers</h3>
+        <p>
+          Unlock extra savings with selected payment methods.
+        </p>
+      </article>
+
+      <article class="saving-item reveal">
+        <span>🎁</span>
+        <h3>First Order</h3>
+        <p>
+          New to Stackly? Start with an exclusive welcome deal.
+        </p>
+      </article>
+
+      <article class="saving-item reveal">
+        <span>⭐</span>
+        <h3>Reward Points</h3>
+        <p>
+          Earn points every time you order your favourites.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     PICK YOUR CRAVING
+     ===================================================== -->
+
+<section class="cravings-section">
+
+  <div class="wrap">
+
+    <h2 class="reveal">Pick your craving</h2>
+
+    <p class="sub reveal">
+      Your favourite food might already have a deal waiting.
+    </p>
+
+    <div class="cravings-grid">
+
+      <a href="error.html" class="craving-card reveal">
+        <img
+          src="images/food6.webp"
+          alt="Pizza deals"
+          loading="lazy"
+        />
+
+        <div>
+          <h3>Pizza Night</h3>
+          <span>Hot deals · Extra cheese · Big flavours</span>
+        </div>
+      </a>
+
+      <a href="error.html" class="craving-card reveal">
+        <img
+          src="images/food3.webp"
+          alt="Burger deals"
+          loading="lazy"
+        />
+
+        <div>
+          <h3>Burger Deals</h3>
+          <span>Juicy favourites</span>
+        </div>
+      </a>
+
+      <a href="error.html" class="craving-card reveal">
+        <img
+          src="images/food21.webp"
+          alt="Healthy meals"
+          loading="lazy"
+        />
+
+        <div>
+          <h3>Healthy Picks</h3>
+          <span>Fresh & light</span>
+        </div>
+      </a>
+
+      <a href="error.html" class="craving-card reveal">
+        <img
+          src="images/food28.webp"
+          alt="Desserts"
+          loading="lazy"
+        />
+
+        <div>
+          <h3>Sweet Treats</h3>
+          <span>End it sweet</span>
+        </div>
+      </a>
+
+      <a href="menu.html" class="craving-card reveal">
+        <img
+          src="images/food29.webp"
+          alt="Drinks"
+          loading="lazy"
+        />
+
+        <div>
+          <h3>Cool Drinks</h3>
+          <span>Fresh & refreshing</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================ -->
+
+      <section class="s s5">
+        <div class="wrap">
+          <h2 class="reveal">Loyalty rewards</h2>
+          <p class="sub reveal">The more you order, the more you unlock.</p>
+          <div class="grid">
+            <article class="card tc reveal">
+              <div class="ic">🥉</div>
+              <div class="cb">
+                <h3>Bronze</h3>
+                <p>Earn 1 point per ₹10 spent.</p>
+              </div>
+            </article>
+            <article class="card tc reveal">
+              <div class="ic">🥈</div>
+              <div class="cb">
+                <h3>Silver</h3>
+                <p>Free delivery on every weekend order.</p>
+              </div>
+            </article>
+            <article class="card tc reveal">
+              <div class="ic">🥇</div>
+              <div class="cb">
+                <h3>Gold</h3>
+                <p>Priority riders and monthly bonus coupons.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- ================================ -->
+
+      <section class="s s6">
+        <div class="wrap">
+          <h2 class="reveal">Offer FAQ</h2>
+          <p class="sub reveal">Quick answers before you order.</p>
+          <div class="faq">
+            <div class="q">
+              <button>Can I combine coupons?</button>
+              <p>Only one coupon works per order.</p>
+            </div>
+            <div class="q">
+              <button>When do coupons expire?</button>
+              <p>Each coupon shows its date in your wallet.</p>
+            </div>
+            <div class="q">
+              <button>Do offers work on all restaurants?</button>
+              <p>Most do. Ineligible ones are marked at checkout.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- =====================================================
+     FINAL CTA
+     ===================================================== -->
+
+<section class="offer-final">
+
+  <div class="offer-final-content reveal">
+
+    <h2>
+      Hungry for a
+      better deal?
+    </h2>
+
+    <p>
+      Find your favourite meal and make your next order
+      a little more rewarding.
+    </p>
+
+    <a href="menu.html">
+      Start your order →
+    </a>
+
+  </div>
+
+</section>
+
+    </main>
+    <footer class="ft">
+      <b>🍔 Stackly</b>
+      <p>Fresh food, fast. © 2026 Stackly. All rights reserved.</p>
+      <p>
+        <a href="index.html">Home</a> · <a href="menu.html">Menu</a> ·
+        <a href="offers.html">Offers</a> · <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a>
+      </p>
+    </footer>
+    <div class="modal" id="lm">
+      <div class="box">
+        <button class="x" aria-label="Close">✕</button>
+        <h2>Welcome back</h2>
+        <div class="roles">
+          <button class="on" data-r="Customer">🍽️ Customer</button
+          ><button data-r="Restaurant Owner">🏪 Restaurant Owner</button>
+        </div>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="Email" required /><input
+            type="password"
+            placeholder="Password"
+            required
+          /><button class="btn">Login as <span id="rn">Customer</span></button>
+        </form>
+      </div>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/offers.js"></script>
+  </body>
+</html>
