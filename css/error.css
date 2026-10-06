@@ -1,0 +1,373 @@
+/* =========================================================
+   FOODRUSH ERROR PAGE
+   ========================================================= */
+
+.pg-error {
+  min-height: 100vh;
+  margin: 0;
+  background: #211525;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.error-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 50px 20px;
+}
+
+
+/* =========================
+   BACKGROUND SHAPES
+   ========================= */
+
+.error-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.shape-one {
+  width: 420px;
+  height: 420px;
+  top: -180px;
+  right: -100px;
+  background: rgba(255, 107, 44, .12);
+}
+
+.shape-two {
+  width: 300px;
+  height: 300px;
+  bottom: -120px;
+  left: -80px;
+  background: rgba(255, 200, 87, .08);
+}
+
+.shape-three {
+  width: 180px;
+  height: 180px;
+  top: 35%;
+  left: 8%;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+
+/* =========================
+   WRAPPER
+   ========================= */
+
+.error-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(900px, 100%);
+  text-align: center;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.error-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.error-logo img {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   FOOD ILLUSTRATION
+   ========================= */
+
+.error-food {
+  position: relative;
+  width: 180px;
+  height: 145px;
+  margin: 0 auto 5px;
+}
+
+.food-circle {
+  width: 125px;
+  height: 125px;
+  margin: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    145deg,
+    #fff8ef,
+    #ffe5c8
+  );
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, .25),
+    0 0 0 10px rgba(255, 107, 44, .08);
+}
+
+.food-main {
+  font-size: 4.5rem;
+  display: block;
+  animation: foodFloat 3s ease-in-out infinite;
+}
+
+.floating-food {
+  position: absolute;
+  font-size: 1.8rem;
+  animation: floatingFood 3s ease-in-out infinite;
+}
+
+.food-one {
+  left: 0;
+  top: 20px;
+  animation-delay: .3s;
+}
+
+.food-two {
+  right: 0;
+  top: 55px;
+  animation-delay: .7s;
+}
+
+.food-three {
+  right: 20px;
+  top: 0;
+  animation-delay: 1s;
+}
+
+@keyframes foodFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes floatingFood {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(8deg);
+  }
+}
+
+
+/* =========================
+   404 NUMBER
+   ========================= */
+
+.error-number {
+  margin-top: -5px;
+  color: #fff8ef;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(5rem, 13vw, 9rem);
+  font-weight: 800;
+  line-height: .8;
+  letter-spacing: -8px;
+}
+
+.error-number span {
+  color: #ff6b2c;
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.error-content {
+  max-width: 650px;
+  margin: 20px auto 0;
+}
+
+.error-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 200, 87, .25);
+  border-radius: 50px;
+  background: rgba(255, 200, 87, .08);
+  color: #ffc857;
+  font-size: .82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.error-content h1 {
+  margin: 18px 0 12px;
+  color: #fff8ef;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.error-content h1 span {
+  color: #ff6b2c;
+}
+
+.error-content p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: rgba(255, 248, 239, .68);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.error-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.error-btn {
+  min-height: 52px;
+  padding: 0 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: .3s ease;
+}
+
+.error-btn.primary {
+  background: #ff6b2c;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(255, 107, 44, .22);
+}
+
+.error-btn.primary:hover {
+  background: #e94d12;
+  transform: translateY(-3px);
+}
+
+.error-btn.secondary {
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .05);
+  color: #fff8ef;
+}
+
+.error-btn.secondary:hover {
+  border-color: #ffc857;
+  color: #ffc857;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   BOTTOM FEATURES
+   ========================= */
+
+.error-bottom {
+  margin-top: 45px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, .09);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  color: rgba(255, 248, 239, .48);
+  font-size: .82rem;
+}
+
+.error-bottom span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.error-bottom i {
+  color: #ffc857;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .error-page {
+    padding: 35px 18px;
+  }
+
+  .error-logo img {
+    width: 155px;
+  }
+
+  .error-food {
+    transform: scale(.85);
+    margin-bottom: -5px;
+  }
+
+  .error-number {
+    font-size: 6rem;
+    letter-spacing: -5px;
+  }
+
+  .error-content {
+    margin-top: 15px;
+  }
+
+  .error-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .error-content p {
+    font-size: .92rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: min(100%, 330px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .error-btn {
+    width: 100%;
+  }
+
+  .error-bottom {
+    gap: 12px 20px;
+    margin-top: 32px;
+  }
+
+}

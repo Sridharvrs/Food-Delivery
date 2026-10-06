@@ -921,35 +921,66 @@
    ========================================================= */
 
 .pg-signup .box {
-  width: min(100%, 520px) !important;
+
+  width: min(100%, 680px) !important;
+
+  max-width: 680px !important;
+
   padding: 0 !important;
 
+  margin: 0 !important;
+
   background: transparent !important;
+
   border: 0 !important;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
 
   transform: none !important;
+
   rotate: none !important;
+
 }
 
 .pg-signup .box::before,
 .pg-signup .box::after {
+
   display: none !important;
+
   content: none !important;
+
 }
 
 .pg-signup .sm {
+
   overflow: hidden;
+
 }
 
+
 /* Keep form elements clean */
+
 .pg-signup .social-btn,
 .pg-signup #signupForm input:not([type="checkbox"]),
 .pg-signup .submit-btn {
+
   transform: none !important;
+
 }
 
+
+/* Keep intended hover effect */
+
 .pg-signup .social-btn:hover {
+
   transform: translateY(-2px) !important;
+
+}
+
+.pg-signup .submit-btn:hover {
+
+  transform: translateY(-2px) !important;
+
 }
